@@ -1,0 +1,52 @@
+{
+	"name": "meta",
+	"version": "1.0.0",
+	"description": "Meta NFT Website landing",
+	"main": "gulpfile.js",
+	"type": "module",
+	"scripts": {
+		"dev": "gulp",
+		"build": "gulp build --build",
+		"zip": "gulp deployZIP --build",
+		"deploy": "gulp deployFTP --build",
+		"svgSprive": "gulp svgSpriteTask"
+	},
+	"author": "igorexa34314",
+	"license": "ISC",
+	"dependencies": {
+		"gulp-cli": "latest"
+	},
+	"devDependencies": {
+		"browser-sync": "latest",
+		"del": "latest",
+		"glob": "latest",
+		"gulp": "latest",
+		"gulp-autoprefixer": "latest",
+		"gulp-clean-css": "latest",
+		"gulp-file-include": "latest",
+		"gulp-fonter-fix": "latest",
+		"gulp-group-css-media-queries": "latest",
+		"gulp-if": "latest",
+		"gulp-imagemin": "latest",
+		"gulp-newer": "latest",
+		"gulp-notify": "latest",
+		"gulp-plumber": "latest",
+		"gulp-pug": "latest",
+		"gulp-rename": "latest",
+		"gulp-replace": "latest",
+		"gulp-sass": "latest",
+		"gulp-svg-sprite": "latest",
+		"gulp-ttf2woff2": "latest",
+		"gulp-util": "latest",
+		"gulp-version-number": "latest",
+		"gulp-webp": "latest",
+		"gulp-webp-html-nosvg": "latest",
+		"gulp-webpcss": "latest",
+		"gulp-zip": "latest",
+		"sass": "latest",
+		"vinyl-ftp": "latest",
+		"webp-converter": "2.2.3",
+		"webpack": "latest",
+		"webpack-stream": "latest"
+	}
+}

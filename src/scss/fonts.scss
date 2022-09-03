@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'Audiowide';
+	font-display: swap;
+	src: url("../fonts/Audiowide/Audiowide-Regular.woff2") format("woff2"), url("../fonts/Audiowide/Audiowide-Regular.woff") format("woff"), url("../fonts/Audiowide/Audiowide-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'DMMono';
+	font-display: swap;
+	src: url("../fonts/DM_Mono/DMMono-Regular.woff2") format("woff2"), url("../fonts/DM_Mono/DMMono-Regular.woff") format("woff"), url("../fonts/DM_Mono/DMMono-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Inter';
+	font-display: swap;
+	src: url("../fonts/Inter/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter/Inter-Regular.woff") format("woff"), url("../fonts/Inter/Inter-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+// Переменные шрифтов
+$DMMono: 'DMMono';
+$audio: 'Audiowide';
+$inter: 'Inter';
+
+$regular: 400;
