@@ -17,5 +17,14 @@ export function burger() {
 				$(menuBurger).removeClass('_active');
 			});
 		});
+		$(window).resize(function () {
+			if ($(window).width() <= 480) {
+				// Перемещаем соц сети к бургер меню
+				$('.header__socials').detach().appendTo('.menu__body');
+			}
+			else {
+				$('.header__socials').detach().appendTo('.header__container');
+			}
+		});
 	}
 }

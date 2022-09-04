@@ -50,38 +50,11 @@ body {
 		max-width: none;
 	}
 }
-// ==========================================
+// ===================================================
 
-.header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 50;
-	&::before {
-		content: "";
-		@extend %abs100;
-		background-color: $mainbgc;
-		z-index: -1;
-	}
-	&__container {
-		max-width: 1440px;
-		margin: 0 auto;
-		padding: 10px 100px;
-		@include adaptiv-value("padding-left", 100, 15, 2);
-		@include adaptiv-value("padding-right", 100, 15, 2);
-		min-height: 100px;
-		display: flex;
-		align-items: flex-end;
-	}
-	&__logo {
-		margin-bottom: 5px;
-	}
-	&__menu {
-		margin-left: 40px;
-		padding-bottom: 15px;
-	}
-	&__socials {}
+// Общие классы
+.hidden {
+	display: none;
 }
 .socials {
 	display: flex;
@@ -118,6 +91,39 @@ body {
 		max-width: 100%;
 		height: auto;
 	}
+}
+
+
+// =========================================================
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	&::before {
+		content: "";
+		@extend %abs100;
+		background-color: $mainbgc;
+		z-index: -1;
+	}
+	&__container {
+		padding: 10px 100px;
+		@include adaptiv-value("padding-left", 100, 15, 2);
+		@include adaptiv-value("padding-right", 100, 15, 2);
+		min-height: 100px;
+		display: flex;
+		align-items: flex-end;
+	}
+	&__logo {
+		margin-bottom: 5px;
+	}
+	&__menu {
+		margin-left: 40px;
+		padding-bottom: 15px;
+	}
+	&__socials {}
 }
 .menu {
 	flex: 1 1 auto;
@@ -160,6 +166,7 @@ body {
 		}
 	}
 }
+
 // Menu Burger
 @media(max-width:$bp760) {
 	.header {
@@ -240,8 +247,93 @@ body {
 			justify-content: flex-end;
 		}
 		&__socials {
-			display: none;
+			margin-top: 40px;
+			justify-content: center;
 		}
 	}
 }
 // ==========================================================
+
+.hero {
+	position: relative;
+	background-color: $mainbgc;
+	&::before {
+		content: "";
+		display: block;
+		@extend %abs100;
+		background: url(../img/hero/hero-bg.png) right top/contain no-repeat;
+		@media(max-width:$bp1280) {
+			opacity: 0.7;
+		}
+		@media(max-width:$bp980) {
+			opacity: 0.5;
+		}
+	}
+	&__container {
+		position: relative;
+		z-index: 10;
+		@include adaptiv-value("padding-top", 133, 65, 2);
+		@include adaptiv-value("padding-bottom", 103, 40, 2);
+	}
+	&__content {
+		padding-left: 2em;
+		max-width: calc(484px + 2em);
+		@media(max-width:$bp480) {
+			padding-left: 1em;
+		}
+	}
+	&__block-text {
+		margin-top: 43px;
+		> div {
+			@include adaptiv-value("margin-right", 155, 30, 2);
+		}
+	}
+	&__button {
+		@include adaptiv-value("margin-top", 155, 50, 2);
+	}
+	&__title {}
+}
+.main-title {
+	@include adaptiv-value("font-size", 51, 32, 2);
+	text-transform: uppercase;
+	font-family: $audio;
+	line-height: 1.19;
+}
+.section-title {
+	font-family: $audio;
+	font-size: 2.375em;
+	line-height: 1.2;
+	text-align: center;
+	text-transform: uppercase;
+	span {
+		color: #A8A8A8;
+	}
+}
+.block-text {
+	&__title {
+		font-size: 1.3125em;
+		color: $greenbgc;
+		line-height: 1.52;
+	}
+
+	&__text {
+		font-size: 1em;
+		font-family: $inter;
+		line-height: 1.6;
+	}
+}
+.button {
+	display: inline-block;
+	padding: 1.06em 2.5em 1.6875em 2.5em;
+	font-family: $DMMono;
+	font-size: 1em;
+	text-align: center;
+	color: $mainbgc;
+	text-transform: capitalize;
+	background-color: $greenbgc;
+	border: 1px solid $greenbgc;
+	&_tp {
+		color: $txtcolor;
+		background-color: transparent;
+	}
+}
