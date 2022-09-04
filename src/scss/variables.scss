@@ -1,12 +1,14 @@
-// Ширина вьюпорта и контейнера
+// Ширина вьюпорта и контейнеров
 $maxWidth: 1440;
-$maxWidthContainer: 1360;
+$herocnt: 1360;
+$maxWidthContainer: 1160;
 
 // Отступы безопасности
 $cntpd: 15;
 
-
 $fullContainerWidth: $maxWidthContainer + $cntpd + $cntpd;
+
+$fullherocnt: ($herocnt + $cntpd + $cntpd) + px;
 
 // Адаптивное свойство
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
@@ -19,7 +21,6 @@ $fullContainerWidth: $maxWidthContainer + $cntpd + $cntpd;
 			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$fullContainerWidth - 320}));
 		}
 	}
-
 	@if $type==2 {
 		// Только если больше контейнера
 		#{$property}: $startSize + px;
@@ -27,7 +28,6 @@ $fullContainerWidth: $maxWidthContainer + $cntpd + $cntpd;
 			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
 		}
 	}
-
 	@else {
 		// Всегда
 		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
@@ -40,6 +40,7 @@ $contentbgc: #222222;
 $greenbgc: #8DFD1B;
 $txtcolor: #FFFFFF;
 $graytxt: #C4C4C4;
+$footerbgc: #42006A;
 
 
 // Брейкпоинты

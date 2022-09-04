@@ -33,11 +33,7 @@ body {
 	max-width: $fullContainerWidth+px;
 	margin: 0 auto;
 	padding: 0px $cntpd+px;
-
 	@media(max-width:($fullContainerWidth+px)) {
-		max-width: $bp1280;
-	}
-	@media(max-width:$bp1280) {
 		max-width: $bp1024;
 	}
 	@media(max-width:$bp1024) {
@@ -109,9 +105,7 @@ body {
 		z-index: -1;
 	}
 	&__container {
-		padding: 10px 100px;
-		@include adaptiv-value("padding-left", 100, 15, 2);
-		@include adaptiv-value("padding-right", 100, 15, 2);
+		padding: 10px 15px;
 		min-height: 100px;
 		display: flex;
 		align-items: flex-end;
@@ -261,7 +255,10 @@ body {
 		content: "";
 		display: block;
 		@extend %abs100;
-		background: url(../img/hero/hero-bg.png) right top/contain no-repeat;
+		background: url(@img/hero/hero-bg.png) right top/contain no-repeat;
+		@media(min-width:$bp1920) {
+			background-position: 50vw top;
+		}
 		@media(max-width:$bp1280) {
 			opacity: 0.7;
 		}
@@ -274,6 +271,22 @@ body {
 		z-index: 10;
 		@include adaptiv-value("padding-top", 133, 65, 2);
 		@include adaptiv-value("padding-bottom", 103, 40, 2);
+		max-width: $fullherocnt;
+		@media(max-width:$fullherocnt) {
+			max-width: $bp1280;
+		}
+		@media(max-width:$bp1280) {
+			max-width: $bp1024;
+		}
+		@media(max-width:$bp1024) {
+			max-width: $bp980;
+		}
+		@media(max-width:$bp980) {
+			max-width: $bp760;
+		}
+		@media(max-width:$bp760) {
+			max-width: none;
+		}
 	}
 	&__content {
 		padding-left: 2em;
@@ -311,15 +324,33 @@ body {
 }
 .block-text {
 	&__title {
+		position: relative;
+		padding-top: 2px;
+		padding-left: 1.05em;
 		font-size: 1.3125em;
 		color: $greenbgc;
 		line-height: 1.52;
+		&::before {
+			content: "";
+			left: 0;
+			top: 0;
+			position: absolute;
+			display: inline-block;
+			width: 0.1em;
+			height: 100%;
+			background-color: $greenbgc;
+			border-left: 1px solid $greenbgc;
+		}
 	}
 
 	&__text {
+		margin-top: 2em;
 		font-size: 1em;
 		font-family: $inter;
 		line-height: 1.6;
+		> p:not(:last-child) {
+			margin-bottom: 1.125em;
+		}
 	}
 }
 .button {
@@ -332,8 +363,101 @@ body {
 	text-transform: capitalize;
 	background-color: $greenbgc;
 	border: 1px solid $greenbgc;
-	&_tp {
+	&_transp {
 		color: $txtcolor;
 		background-color: transparent;
+	}
+}
+// ===================================================================
+
+.nft-collection {
+	background-color: $mainbgc;
+	&__container {
+		@include adaptiv-value("padding-top", 96, 55, 2);
+		@include adaptiv-value("padding-bottom", 117, 65, 2);
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas: "h text"
+			"image text";
+		@media(max-width:$bp980) {
+			grid-template-columns: auto;
+			grid-template-areas: "h""text"
+				"image""text";
+		}
+	}
+
+	&__title {
+		text-align: left;
+		max-width: 351px;
+		margin-left: 1.8em;
+		grid-area: h;
+		height: fit-content;
+	}
+
+	&__image {
+		grid-area: image;
+		img {
+			display: block;
+			max-width: 100%;
+		}
+	}
+
+	&__content {
+		grid-area: text;
+	}
+
+	&__block-text {}
+
+	&__button {
+		margin-top: 2.25em;
+	}
+}
+// =====================================================================
+
+
+
+.footer {
+	background-color: $footerbgc;
+	&__container {
+		@include adaptiv-value("padding-top", 100, 55, 2);
+		@include adaptiv-value("padding-bottom", 100, 55, 2);
+	}
+	&__logo {
+		img {
+			max-width: 102.5px;
+		}
+	}
+	&__nav {}
+	&__socials {}
+	&-devs {
+		& p:not(:last-child) {
+			margin-bottom: 1.8em;
+		}
+		a {
+			transition: all 0.3s ease 0s;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	&-copyrights {}
+}
+
+.nav-footer {
+	display: flex;
+	&__column {}
+	&__list {}
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 1.8em;
+		}
+	}
+	&__link {
+		display: inline-block;
+		transition: all 0.4s ease 0s;
+		&:hover {
+			opacity: 0.7;
+			transform: translateY(-2px);
+		}
 	}
 }
