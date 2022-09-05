@@ -1,5 +1,6 @@
 import * as myFunctions from "./modules/functions.js";
 import { burger } from "./burger.js";
+import { SetMarquee } from "./marquee.js";
 //import { initSwiper } from "./init-swiper.js";
 //import { popup } from "./popup.js";
 //import { spoiler } from "./spoiler.js";
@@ -14,6 +15,7 @@ $('.logo').click(function () {
 
 $(document).ready(function () {
 	burger();
+	SetMarquee();
 	//initSwiper();
 	//popup();
 	//spoiler();

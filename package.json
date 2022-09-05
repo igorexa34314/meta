@@ -14,7 +14,8 @@
 	"author": "igorexa34314",
 	"license": "ISC",
 	"dependencies": {
-		"gulp-cli": "latest"
+		"gulp-cli": "latest",
+		"jsdom": "latest"
 	},
 	"devDependencies": {
 		"browser-sync": "latest",
@@ -43,6 +44,7 @@
 		"gulp-webp-html-nosvg": "latest",
 		"gulp-webpcss": "latest",
 		"gulp-zip": "latest",
+		"jquery": "latest",
 		"sass": "latest",
 		"vinyl-ftp": "latest",
 		"webp-converter": "2.2.3",
