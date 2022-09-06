@@ -1,6 +1,7 @@
 import * as myFunctions from "./modules/functions.js";
 import { burger } from "./burger.js";
 import { SetMarquee } from "./marquee.js";
+import { Pagination } from "./pagination.js";
 //import { initSwiper } from "./init-swiper.js";
 //import { popup } from "./popup.js";
 //import { spoiler } from "./spoiler.js";
@@ -16,8 +17,10 @@ $('.logo').click(function () {
 $(document).ready(function () {
 	burger();
 	SetMarquee();
+	Pagination('.story-navbar__link', '.story-item');
 	//initSwiper();
 	//popup();
 	//spoiler();
 	// InitTabs($('.blog-page__container'));
+
 });
