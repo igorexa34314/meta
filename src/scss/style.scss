@@ -375,24 +375,24 @@ body {
 		grid-gap: 41px 0px;
 		grid-auto-flow: column;
 		grid-template-areas:
-			"title content"
-			"image content";
+			"nft-title nft-content"
+			"nft-image nft-content";
 		@media(max-width:$bp980) {
 			grid-template-areas:
-				"title image"
-				"content content";
+				"nft-title nft-image"
+				"nft-content nft-content";
 			align-items: center;
 			grid-gap: 55px 20px;
 		}
 		@media(max-width:$bp640) {
 			grid-template-areas:
-				"title"
-				"content"
-				"image";
+				"nft-title"
+				"nft-content"
+				"nft-image";
 		}
 	}
 	&__title {
-		grid-area: title;
+		grid-area: nft-title;
 		margin-left: 1.8em;
 		text-align: left;
 		height: fit-content;
@@ -406,7 +406,7 @@ body {
 		}
 	}
 	&__image {
-		grid-area: image;
+		grid-area: nft-image;
 		display: flex;
 		justify-content: center;
 		img {
@@ -415,7 +415,7 @@ body {
 		}
 	}
 	&__content {
-		grid-area: content;
+		grid-area: nft-content;
 		@media(max-width:$bp980) {
 			padding: 0 15px;
 		}
@@ -540,7 +540,7 @@ body {
 		display: block;
 		height: calc(100vw / 6);
 		width: 100%;
-		background: $mainbgc url(@img/story/story-footer-bg.png) center top no-repeat;
+		background: $mainbgc url(@img/story/story-footer-bg.png) center bottom no-repeat;
 		background-size: 100% auto;
 		@media(min-width:$bp1440) {
 			max-height: 240px;
@@ -628,55 +628,173 @@ body {
 // ===================================================================
 
 .roadmap {
+	position: relative;
 	background-color: $mainbgc;
+	&-bg, &::before, &::after {
+		$bgsize: calc(679px / 1440px * 100%);
+		position: absolute;
+		display: block;
+		background: transparent url(@img/roadmap/circles-bg.svg) no-repeat;
+		width: $bgsize;
+		padding-bottom: $bgsize;
+		@media(max-width:$bp1440) {
+			background-size: contain;
+		}
+		@media(max-width:$bp640) {
+			display: none;
+		}
+	}
+	&::before, &::after {
+		content: "";
+		left: 1.5%;
+		@media(max-width:$bp980) {
+			left: -5%;
+		}
+	}
+	&-bg {
+		top: 20%;
+		right: 1.5%;
+		@media(max-width:$bp980) {
+			right: -5%;
+		}
+		// transform: translate(0, -50%);
+		background-position: center right;
+	}
+	&::before {
+		top: -7%;
+		background-position: top center;
+		@media(max-width:$bp980) {
+			top: 2%;
+		}
+	}
+	&::after {
+		bottom: 0;
+		background-position: bottom center;
+	}
 	&__container {
 		@include adaptiv-value("padding-top", 120, 65, 2);
-		@include adaptiv-value("padding-bottom", 170, 85, 2);
+		@include adaptiv-value("padding-bottom", 265, 75, 2);
 	}
 	&__title {
 		margin-bottom: 1.6em;
 	}
-	&__content {}
+	&__content {
+		margin: 0 auto;
+		max-width: 560px;
+		@media(min-width: $bp1920) {
+			max-width: 60%;
+		}
+		@media(max-width: $bp760) {
+			max-width: 85%;
+		}
+		@media(max-width: $bp480) {
+			max-width: 90%;
+		}
+		padding: 10px;
+	}
 	&__items {}
 
 	&-item {
+		position: relative;
+		z-index: 50;
 		&:not(:last-child) {
 			position: relative;
-			@include adaptiv-value("margin-bottom", 140, 40, 2);
+			@include adaptiv-value("margin-bottom", 140, 65, 2);
 			&:after {
 				content: "";
 				position: absolute;
 				left: 50%;
-				bottom: -60px;
+				@include adaptiv-value("bottom", -55, -30, 2);
 				transform: translate(-50%, 50%);
 				display: inline-block;
-				width: 2px;
+				width: 0.1em;
 				background-color: $greenbgc;
-				height: 40px;
+				height: 2.2em;
 			}
 		}
 		background-color: $contentbgc;
 		border: 2px solid $greenbgc;
-		&__header {}
-		&__count {}
-		&__subtitle {}
-		&__title {}
-		&__main {
-			padding: 1.85em 0;
+		&__header {
+			padding: 0.8125em;
+			text-transform: uppercase;
+			display: grid;
+			grid-template-columns: auto 1fr;
+			grid-gap: 0px 11.75px;
+			align-items: center;
+			border-bottom: 2px solid $greenbgc;
+		}
+
+		&__count {
+			width: 45px;
+			height: 45px;
 			display: flex;
-			justify-content: space-between;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.75em;
+			line-height: 1.02;
+			grid-row: 1/3;
+			color: $greenbgc;
+			border: 1px solid $greenbgc;
+			.roadmap-item._completed & {
+				color: $mainbgc;
+				background-color: $greenbgc;
+			}
+		}
+		&__subtitle {
+			margin-bottom: 1px;
+			@include adaptiv-value("font-size", 8, 6.5, 2);
+			line-height: 1.5;
+			letter-spacing: 0.125em;
+			color: $greenbgc;
+			&::before {
+				content: "Phase ";
+			}
+			.roadmap-item._completed &::after {
+				content: " - completed";
+			}
+		}
+		&__title {
+			line-height: 1.73;
+			grid-column: 2/3;
+		}
+		&__main {
+			padding: 1.85em 0.75em;
+			display: flex;
+			align-items: flex-start;
 		}
 		&__block-text {
+			flex: 1 1 auto;
+			padding-right: 3.5em;
+
+			> div {
+				margin-top: 0;
+				@include adaptiv-value("font-size", 11, 9.5, 2);
+				line-height: 2.33;
+			}
+			p:not(:last-child) {
+				margin-bottom: 0.88em;
+			}
 			ul {
+				margin-left: 1.4em;
 				margin-bottom: 2em;
 				> li {
-					&:not(:last-child) {
-						margin-bottom: 0.5em;
-					}
+					line-height: 2.91;
 				}
+			}
+			span, a {
+				margin: 0 0.5ch;
+				font-family: $DMMono;
+				font-size: 1.1em;
+				line-height: 2.13;
+				color: $greenbgc;
 			}
 		}
 		&__image {
+			flex: 0 0 129px;
+			display: flex;
+			@media(max-width:$bp480) {
+				display: none;
+			}
 			img {
 				display: block;
 				max-width: 100%;
@@ -684,9 +802,123 @@ body {
 		}
 	}
 }
-._completed {}
-
 // ==============================================================================
+
+.our-partners {
+	background-color: $mainbgc;
+	&__container {
+		@include adaptiv-value("padding-bottom", 126, 65, 2);
+	}
+	&__title {
+		text-align: center;
+		@include adaptiv-value("font-size", 11, 9.5, 2);
+		line-height: 1.09;
+		text-transform: uppercase;
+		color: $greenbgc;
+		letter-spacing: 0.09em;
+	}
+	&__content {
+		margin-top: 3em;
+	}
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		@media(max-width:$bp1280) {
+			grid-template-columns: repeat(auto-fill, minmax(150px, 33.3333%));
+		}
+		grid-gap: 3.2em 4.5em;
+		justify-content: center;
+		justify-items: center;
+	}
+
+	&-item {
+		max-width: fit-content;
+		&__link {
+			display: block;
+			opacity: 0.65;
+			transition: all 0.3s ease-in 0s;
+			&:hover {
+				opacity: 1;
+				transform: translate(1px, 1px);
+			}
+		}
+
+		&__icon {
+			img {
+				display: block;
+				max-width: 100%;
+			}
+		}
+	}
+}
+// ==============================================================================
+
+.faq {
+	background-color: $mainbgc;
+	&__container {
+		@include adaptiv-value("padding-top", 120, 65, 2);
+		@include adaptiv-value("padding-bottom", 110, 55, 2);
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+		grid-gap: 41px 0px;
+		grid-auto-flow: column;
+		grid-template-areas:
+			"faq-title faq-content"
+			"faq-image faq-content";
+		@media(max-width:$bp980) {
+			grid-template-areas:
+				"faq-title faq-image"
+				"faq-content faq-content";
+			align-items: center;
+			grid-gap: 55px 20px;
+		}
+		@media(max-width:$bp640) {
+			grid-template-areas:
+				"faq-title"
+				"faq-content"
+				"faq-image";
+		}
+	}
+	&__title {
+		grid-area: faq-title;
+		text-align: left;
+		height: fit-content;
+		max-width: 351px;
+		@media(max-width:$bp980) {
+			max-width: none;
+			margin: 0 auto;
+		}
+		@media(max-width:$bp760) {
+			padding: 0 15px;
+		}
+	}
+	&__image {
+		grid-area: faq-image;
+		display: flex;
+		img {
+			display: block;
+			max-width: 100%;
+		}
+	}
+	&__content {
+		grid-area: faq-content;
+		@media(max-width:$bp980) {
+			padding: 0 15px;
+		}
+	}
+	&-question {
+		&__block-text {
+			> h3 {
+				padding: 0;
+				color: $txtcolor;
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+}
+// ===============================================================================
 
 .footer {
 	background-color: $footerbgc;
