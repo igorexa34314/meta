@@ -548,7 +548,8 @@ a.button {
 	&__items {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
-		@include adaptiv-value("grid-gap", 60, 40, 2);
+		@include adaptiv-value("grid-column-gap", 60, 40, 2);
+		grid-row-gap: 55px;
 	}
 	&__item {
 		transform: translate(0, -50%);
@@ -566,12 +567,18 @@ a.button {
 			display: block;
 			margin: 0 auto;
 			max-width: 100%;
+			@media(max-width:$bp480) {
+				max-width: 60%;
+			}
 		}
 	}
 	&__block-text {
 		margin-top: 1.1em;
 		text-align: center;
 		@include adaptiv-value("font-size", 16, 14, 2);
+		> div {
+			margin-top: 0;
+		}
 	}
 }
 // ===================================================================

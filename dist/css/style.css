@@ -631,7 +631,8 @@ a.button_transp:hover {
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
-  grid-gap: 60px;
+  grid-column-gap: 60px;
+  grid-row-gap: 55px;
 }
 
 .artists__item {
@@ -698,6 +699,10 @@ a.button_transp:hover {
   margin-top: 1.1em;
   text-align: center;
   font-size: 16px;
+}
+
+.artists__block-text > div {
+  margin-top: 0;
 }
 
 .story {
@@ -1588,7 +1593,7 @@ a.button_transp:hover {
   }
 
   .artists__items {
-    grid-gap: calc(40px + 20 * ((100vw - 320px) / 1120));
+    grid-column-gap: calc(40px + 20 * ((100vw - 320px) / 1120));
   }
 
   .artists__block-text {
@@ -2153,6 +2158,10 @@ a.button_transp:hover {
 
   .hero__content {
     padding-left: 1em;
+  }
+
+  .artists__photo img {
+    max-width: 60%;
   }
 
   .roadmap__content {
