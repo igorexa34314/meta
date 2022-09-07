@@ -33,7 +33,7 @@ export const html = () => {
 				versionNumber({
 					'value': '%DT%',
 					'append': {
-						'key': '_v',
+						'key': 'v',
 						'cover': 0,
 						'to': [
 							'css',
