@@ -52,7 +52,7 @@ body {
 .animation-item {
 	opacity: 0;
 	transform: translate(0, -100%);
-	transition: all 0.8s ease 0s;
+	transition: all 0.8s ease 0.05s;
 	&._active {
 		transform: none;
 		opacity: 1;
@@ -187,6 +187,7 @@ body {
 		> p:not(:last-child) {
 			margin-bottom: 1.125em;
 		}
+		transition-delay: 0.3s;
 	}
 }
 
@@ -441,6 +442,8 @@ a.button {
 			display: block;
 			max-width: 100%;
 		}
+		transform: translate(-70%, 0);
+		transition-duration: 0.9s;
 	}
 	&__content {
 		grid-area: nft-content;
@@ -545,7 +548,15 @@ a.button {
 		grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
 		@include adaptiv-value("grid-gap", 60, 40, 2);
 	}
-	&__item {}
+	&__item {
+		transform: translate(0, -50%);
+		transition-duration: 0.6s;
+		@for $i from 2 through 7 {
+			&:nth-child(#{$i}) {
+				transition-delay: 0.1s * $i;
+			}
+		}
+	}
 	&__photo {
 		display: flex;
 		justify-content: center;
@@ -582,6 +593,7 @@ a.button {
 	}
 	&__title {
 		margin-bottom: 1.6em;
+		transition-delay: 0.2s;
 	}
 	&__content {
 		height: fit-content;
@@ -725,6 +737,13 @@ a.button {
 
 	&-item {
 		position: relative;
+		transform: translate(0, -50%);
+		transition-duration: 0.7s;
+		@for $i from 2 through 7 {
+			&:nth-child(#{$i}) {
+				transition-delay: 0.07s * $i;
+			}
+		}
 		z-index: 50;
 		&:not(:last-child) {
 			position: relative;
@@ -861,6 +880,11 @@ a.button {
 	}
 
 	&-item {
+		@for $i from 1 through 7 {
+			&:nth-child(#{$i}) {
+				transition-delay: 0.07s * $i;
+			}
+		}
 		max-width: fit-content;
 		&__link {
 			display: block;
@@ -871,7 +895,6 @@ a.button {
 				transform: translate(1px, 1px);
 			}
 		}
-
 		&__icon {
 			img {
 				display: block;
@@ -1003,6 +1026,12 @@ a.button {
 	}
 
 	&-member {
+		transform: translate(0, -50%);
+		@for $i from 2 through 3 {
+			&:nth-child(#{$i}) {
+				transition-delay: 0.15s * $i;
+			}
+		}
 		&__photo {
 			display: flex;
 			justify-content: center;
@@ -1073,6 +1102,7 @@ a.button {
 	}
 
 	&__button {
+		transform: none;
 		.button {
 			padding: 1em 2.8em;
 			max-width: fit-content;
@@ -1087,6 +1117,7 @@ a.button {
 	}
 
 	&__image {
+		transform: translate(50%, 0);
 		display: flex;
 		justify-content: center;
 		align-items: center;

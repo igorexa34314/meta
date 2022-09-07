@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@@include('html/head.html',{})
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220907170242">
+	<link rel="shortcut icon" href="img/logo.svg" type="image/svg">
+	<title>Meta</title>
+</head>
 
 <body>
 	<div class="wrapper">
-		@@include('html/header.html',{})
+		<header class="header">
+	<div class="header__container">
+		<div class="header__logo logo">
+			<img src="img/logo.svg" alt="Logo">
+		</div>
+		<div class="header__menu menu">
+			<div class="menu__burger burger-menu"><span></span></div>
+			<div class="menu__body">
+				<ul class="menu__list">
+					<li class="menu__item"><a href="" class="menu__link">Wave NFTs</a></li>
+					<li class="menu__item"><a href="" class="menu__link">Stories</a></li>
+					<li class="menu__item"><a href="" class="menu__link">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="header__socials socials">
+			<a href="" class="socials-button twitter"><picture><source srcset="img/socials/twitter.webp" type="image/webp"><img src="img/socials/twitter.png" alt="Twitter"></picture></a>
+			<a href="" class="socials-button discord"><picture><source srcset="img/socials/discord.webp" type="image/webp"><img src="img/socials/discord.png" alt="Discord"></picture></a>
+			<a href="" class="socials-button youtube"><picture><source srcset="img/socials/youtube.webp" type="image/webp"><img src="img/socials/youtube.png" alt="Youtube"></picture></a>
+			<a href="" class="socials-button telegram"><picture><source srcset="img/socials/telegram.webp" type="image/webp"><img src="img/socials/telegram.png" alt="Telegram"></picture></a>
+		</div>
+	</div>
+</header>
 		<main class="main">
 			<section class="hero">
 				<div class="hero__container">
@@ -45,7 +74,7 @@
 						<div class="nft-collection__button"><a href="" class="button button_transp">Get one on OpenSea</a>
 						</div>
 					</div>
-					<div class="nft-collection__image animation-item"><img src="@img/nft-collection/collection-bg.png"
+					<div class="nft-collection__image animation-item"><img src="img/nft-collection/collection-bg.png"
 							alt="Our nft collection"></div>
 				</div>
 			</section>
@@ -59,7 +88,7 @@
 					<div class="artists__content">
 						<div class="artists__items animation-wrapper">
 							<div class="artists__item animation-item">
-								<div class="artists__photo"><img src="@img/artists/photo1.png" alt="Mark Popson"></div>
+								<div class="artists__photo"><picture><source srcset="img/artists/photo1.webp" type="image/webp"><img src="img/artists/photo1.png" alt="Mark Popson"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Mark Popson</p>
@@ -67,7 +96,7 @@
 								</div>
 							</div>
 							<div class="artists__item animation-item">
-								<div class="artists__photo"><img src="@img/artists/photo2.png" alt="Pete Bentz"></div>
+								<div class="artists__photo"><picture><source srcset="img/artists/photo2.webp" type="image/webp"><img src="img/artists/photo2.png" alt="Pete Bentz"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Pete Bentz</p>
@@ -75,7 +104,7 @@
 								</div>
 							</div>
 							<div class="artists__item animation-item">
-								<div class="artists__photo"><img src="@img/artists/photo3.png" alt="Daniela Youth"></div>
+								<div class="artists__photo"><picture><source srcset="img/artists/photo3.webp" type="image/webp"><img src="img/artists/photo3.png" alt="Daniela Youth"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Daniela Youth</p>
@@ -83,7 +112,7 @@
 								</div>
 							</div>
 							<div class="artists__item animation-item">
-								<div class="artists__photo"><img src="@img/artists/photo4.png" alt="Roman Gore"></div>
+								<div class="artists__photo"><picture><source srcset="img/artists/photo4.webp" type="image/webp"><img src="img/artists/photo4.png" alt="Roman Gore"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Roman Gore</p>
@@ -91,7 +120,7 @@
 								</div>
 							</div>
 							<div class="artists__item animation-item">
-								<div class="artists__photo"><img src="@img/artists/photo5.png" alt="Tonya"></div>
+								<div class="artists__photo"><picture><source srcset="img/artists/photo5.webp" type="image/webp"><img src="img/artists/photo5.png" alt="Tonya"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Tonya</p>
@@ -99,7 +128,7 @@
 								</div>
 							</div>
 							<div class="artists__item animation-item">
-								<div class="artists__photo"><img src="@img/artists/photo6.png" alt="Ivor"></div>
+								<div class="artists__photo"><picture><source srcset="img/artists/photo6.webp" type="image/webp"><img src="img/artists/photo6.png" alt="Ivor"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Ivor</p>
@@ -107,7 +136,7 @@
 								</div>
 							</div>
 							<div class="artists__item animation-item">
-								<div class="artists__photo"><img src="@img/artists/photo7.png" alt="Somae Petit"></div>
+								<div class="artists__photo"><picture><source srcset="img/artists/photo7.webp" type="image/webp"><img src="img/artists/photo7.png" alt="Somae Petit"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Somae Petit</p>
@@ -136,7 +165,7 @@
 						<div class="story__items">
 							<div class="story-item _active" id="story1">
 								<div class="story-item__wrapper">
-									<div class="story-item__image"><img src="@img/story/story1.png" alt="Story1"></div>
+									<div class="story-item__image"><picture><source srcset="img/story/story1.webp" type="image/webp"><img src="img/story/story1.png" alt="Story1"></picture></div>
 									<div class="story-item__block-text block-text">
 										<h3 class="block-text__title">META WAVE NFT is your pass to Meta Record Label ecosystem.
 											It is your access to our industry experts, established artists, and partners.</h3>
@@ -157,7 +186,7 @@
 							</div>
 							<div class="story-item" id="story2">
 								<div class="story-item__wrapper">
-									<div class="story-item__image"><img src="@img/story/story1.png" alt="Story1"></div>
+									<div class="story-item__image"><picture><source srcset="img/story/story1.webp" type="image/webp"><img src="img/story/story1.png" alt="Story1"></picture></div>
 									<div class="story-item__block-text block-text">
 										<h3 class="block-text__title">META WAVE NFT is your pass to Meta Record Label ecosystem.
 											It is your access to our industry experts, established artists, and partners.</h3>
@@ -178,7 +207,7 @@
 							</div>
 							<div class="story-item" id="story3">
 								<div class="story-item__wrapper">
-									<div class="story-item__image"><img src="@img/story/story1.png" alt="Story1"></div>
+									<div class="story-item__image"><picture><source srcset="img/story/story1.webp" type="image/webp"><img src="img/story/story1.png" alt="Story1"></picture></div>
 									<div class="story-item__block-text block-text">
 										<h3 class="block-text__title">META WAVE NFT is your pass to Meta Record Label ecosystem.
 											It is your access to our industry experts, established artists, and partners.</h3>
@@ -223,7 +252,7 @@
 											<p>WAVE NFTs will be 100% pre-minted and launched as an OpenOcean collection</p>
 										</div>
 									</div>
-									<div class="roadmap-item__image"><img src="@img/roadmap/pre-launch.png" alt="Pre launch">
+									<div class="roadmap-item__image"><picture><source srcset="img/roadmap/pre-launch.webp" type="image/webp"><img src="img/roadmap/pre-launch.png" alt="Pre launch"></picture>
 									</div>
 								</div>
 							</div>
@@ -246,7 +275,7 @@
 												of WAVE NFT holders</p>
 										</div>
 									</div>
-									<div class="roadmap-item__image"><img src="@img/roadmap/growth.png" alt="Growth">
+									<div class="roadmap-item__image"><picture><source srcset="img/roadmap/growth.webp" type="image/webp"><img src="img/roadmap/growth.png" alt="Growth"></picture>
 									</div>
 								</div>
 							</div>
@@ -268,7 +297,7 @@
 												Metaverse. Check the concert schedule in our <a href="">Discord</a></p>
 										</div>
 									</div>
-									<div class="roadmap-item__image"><img src="@img/roadmap/new-stage.png" alt="New stage">
+									<div class="roadmap-item__image"><picture><source srcset="img/roadmap/new-stage.webp" type="image/webp"><img src="img/roadmap/new-stage.png" alt="New stage"></picture>
 									</div>
 								</div>
 							</div>
@@ -284,37 +313,37 @@
 						<div class="our-partners__items">
 							<div class="our-partners-item animation-item">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
 							<div class="our-partners-item animation-item">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
 							<div class="our-partners-item animation-item">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
 							<div class="our-partners-item animation-item">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
 							<div class="our-partners-item animation-item">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
 							<div class="our-partners-item animation-item">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
@@ -371,7 +400,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="faq__image"><img src="@img/faq/faq-img.png" alt="Faq image"></div>
+					<div class="faq__image"><picture><source srcset="img/faq/faq-img.webp" type="image/webp"><img src="img/faq/faq-img.png" alt="Faq image"></picture></div>
 				</div>
 			</section>
 			<section class="team">
@@ -384,14 +413,14 @@
 					<div class="team__content">
 						<div class="team__members">
 							<div class="team-member animation-item">
-								<div class="team-member__photo"><img src="@img/team/profile1.png" alt="Shaky Lake"></div>
+								<div class="team-member__photo"><picture><source srcset="img/team/profile1.webp" type="image/webp"><img src="img/team/profile1.png" alt="Shaky Lake"></picture></div>
 								<div class="team-member__data">
 									<h3 class="team-member__name">Shaky Lake</h3>
 									<div class="team-member__job">Founder</div>
 									<div class="team-member__socials socials">
-										<a href="" class="socials-button twitter"><img src="@img/socials/twitter.png"
+										<a href="" class="socials-button twitter"><img src="img/socials/twitter.png"
 												alt="Twitter"></a>
-										<a href="" class="socials-button in"><img src="@img/socials/in.png" alt="In"></a>
+										<a href="" class="socials-button in"><picture><source srcset="img/socials/in.webp" type="image/webp"><img src="img/socials/in.png" alt="In"></picture></a>
 									</div>
 									<div class="team-member__desc">
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -400,14 +429,14 @@
 								</div>
 							</div>
 							<div class="team-member animation-item">
-								<div class="team-member__photo"><img src="@img/team/profile2.png" alt="Baky Hike"></div>
+								<div class="team-member__photo"><picture><source srcset="img/team/profile2.webp" type="image/webp"><img src="img/team/profile2.png" alt="Baky Hike"></picture></div>
 								<div class="team-member__data">
 									<h3 class="team-member__name">Baky Hike</h3>
 									<div class="team-member__job">Co-founder</div>
 									<div class="team-member__socials socials">
-										<a href="" class="socials-button twitter"><img src="@img/socials/twitter.png"
+										<a href="" class="socials-button twitter"><img src="img/socials/twitter.png"
 												alt="Twitter"></a>
-										<a href="" class="socials-button in"><img src="@img/socials/in.png" alt="In"></a>
+										<a href="" class="socials-button in"><picture><source srcset="img/socials/in.webp" type="image/webp"><img src="img/socials/in.png" alt="In"></picture></a>
 									</div>
 									<div class="team-member__desc">
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -416,14 +445,14 @@
 								</div>
 							</div>
 							<div class="team-member animation-item">
-								<div class="team-member__photo"><img src="@img/team/profile3.png" alt="Vania Do"></div>
+								<div class="team-member__photo"><picture><source srcset="img/team/profile3.webp" type="image/webp"><img src="img/team/profile3.png" alt="Vania Do"></picture></div>
 								<div class="team-member__data">
 									<h3 class="team-member__name">Vania Do</h3>
 									<div class="team-member__job">Producer</div>
 									<div class="team-member__socials socials">
-										<a href="" class="socials-button twitter"><img src="@img/socials/twitter.png"
+										<a href="" class="socials-button twitter"><img src="img/socials/twitter.png"
 												alt="Twitter"></a>
-										<a href="" class="socials-button in"><img src="@img/socials/in.png" alt="In"></a>
+										<a href="" class="socials-button in"><picture><source srcset="img/socials/in.webp" type="image/webp"><img src="img/socials/in.png" alt="In"></picture></a>
 									</div>
 									<div class="team-member__desc">
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -448,18 +477,53 @@
 						<div class="join-discord__button animation-item"><a href="" class="button">Join Discord</a>
 						</div>
 					</div>
-					<div class="join-discord__image animation-item"><img src="@img//join-discord/dc-bg.png" alt="Wave"></div>
+					<div class="join-discord__image animation-item"><picture><source srcset="img//join-discord/dc-bg.webp" type="image/webp"><img src="img//join-discord/dc-bg.png" alt="Wave"></picture></div>
 				</div>
 			</section>
 		</main>
-		@@include('html/footer.html',{})
+		<footer class="footer">
+	<div class="footer__container">
+		<div class="footer__logo logo">
+			<img src="img/logo.svg" alt="Logo">
+		</div>
+		<div class="footer-copyrights">
+			<p><span>©</span>2022 All rights reserved</p>
+		</div>
+		<nav class="footer__nav nav-footer">
+			<div class="nav-footer__column">
+				<ul class="nav-footer__list">
+					<li class="nav-footer__item"><a href="" class="nav-footer__link">Wave NFTs</a></li>
+					<li class="nav-footer__item"><a href="" class="nav-footer__link">Stories</a></li>
+					<li class="nav-footer__item"><a href="" class="nav-footer__link">Contact</a></li>
+				</ul>
+			</div>
+			<div class="nav-footer__column">
+				<ul class="nav-footer__list">
+					<li class="nav-footer__item"><a href="" class="nav-footer__link">Licencing</a></li>
+					<li class="nav-footer__item"><a href="" class="nav-footer__link">Style Guide</a></li>
+					<li class="nav-footer__item"><a href="" class="nav-footer__link">Changelog</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="footer-devs">
+			<p>Powered by <a href="">Webflow</a></p>
+			<p>Developed by <a href="">Anastasiia G.</a></p>
+		</div>
+		<div class="footer__socials socials">
+			<a href="" class="socials-button twitter"><picture><source srcset="img/socials/twitter.webp" type="image/webp"><img src="img/socials/twitter.png" alt="Twitter"></picture></a>
+			<a href="" class="socials-button discord"><picture><source srcset="img/socials/discord.webp" type="image/webp"><img src="img/socials/discord.png" alt="Discord"></picture></a>
+			<a href="" class="socials-button youtube"><picture><source srcset="img/socials/youtube.webp" type="image/webp"><img src="img/socials/youtube.png" alt="Youtube"></picture></a>
+			<a href="" class="socials-button telegram"><picture><source srcset="img/socials/telegram.webp" type="image/webp"><img src="img/socials/telegram.png" alt="Telegram"></picture></a>
+		</div>
+	</div>
+</footer>
 	</div>
 
 	<!--Подключаем Jquery-->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20220907170242"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<!--Подключаем JS-->
-	<script src="js/main.min.js"></script>
+	<script src="js/main.min.js?_v=20220907170242"></script>
 </body>
 
 </html>
