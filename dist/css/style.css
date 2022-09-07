@@ -278,6 +278,7 @@ body._lock {
 
 .logo img {
   display: block;
+  margin: 0 auto;
   max-width: 100%;
   height: auto;
 }
@@ -497,6 +498,7 @@ a.button_transp:hover {
 
 .nft-collection__image img {
   display: block;
+  margin: 0 auto;
   max-width: 100%;
 }
 
@@ -688,6 +690,7 @@ a.button_transp:hover {
 
 .artists__photo img {
   display: block;
+  margin: 0 auto;
   max-width: 100%;
 }
 
@@ -1031,6 +1034,7 @@ a.button_transp:hover {
 
 .roadmap-item__image img {
   display: block;
+  margin: 0 auto;
   max-width: 100%;
 }
 
@@ -1132,6 +1136,7 @@ a.button_transp:hover {
 
 .our-partners-item__icon img {
   display: block;
+  margin: 0 auto;
   max-width: 100%;
 }
 
@@ -1176,6 +1181,7 @@ a.button_transp:hover {
 
 .faq__image img {
   display: block;
+  margin: 0 auto;
   max-width: 100%;
 }
 
@@ -1262,6 +1268,7 @@ a.button_transp:hover {
 
 .team-member__photo img {
   display: block;
+  margin: 0 auto;
   max-width: 100%;
 }
 
@@ -1358,6 +1365,8 @@ a.button_transp:hover {
 }
 
 .join-discord__image img {
+  margin: 0 auto;
+  display: block;
   max-width: 100%;
 }
 

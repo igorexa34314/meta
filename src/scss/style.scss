@@ -134,6 +134,7 @@ body {
 	}
 	img {
 		display: block;
+		margin: 0 auto;
 		max-width: 100%;
 		height: auto;
 	}
@@ -440,6 +441,7 @@ a.button {
 		justify-content: center;
 		img {
 			display: block;
+			margin: 0 auto;
 			max-width: 100%;
 		}
 		transform: translate(-70%, 0);
@@ -562,6 +564,7 @@ a.button {
 		justify-content: center;
 		img {
 			display: block;
+			margin: 0 auto;
 			max-width: 100%;
 		}
 	}
@@ -845,6 +848,7 @@ a.button {
 			}
 			img {
 				display: block;
+				margin: 0 auto;
 				max-width: 100%;
 			}
 		}
@@ -898,6 +902,7 @@ a.button {
 		&__icon {
 			img {
 				display: block;
+				margin: 0 auto;
 				max-width: 100%;
 			}
 		}
@@ -956,6 +961,7 @@ a.button {
 		}
 		img {
 			display: block;
+			margin: 0 auto;
 			max-width: 100%;
 			@media(max-width:$bp640) {
 				max-width: 65%;
@@ -1037,6 +1043,7 @@ a.button {
 			justify-content: center;
 			img {
 				display: block;
+				margin: 0 auto;
 				max-width: 100%;
 				@media(max-width:$bp1024) {
 					max-width: 85%;
@@ -1122,6 +1129,8 @@ a.button {
 		justify-content: center;
 		align-items: center;
 		img {
+			margin: 0 auto;
+			display: block;
 			max-width: 100%;
 			@media(max-width:$bp1024) {
 				max-width: 85%;
