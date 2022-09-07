@@ -1,6 +1,6 @@
 
 // Function Animation on scroll
-function AnimateItems(animWrapper) {
+export function AnimateItems(animWrapper) {
 	var animItems;
 	if ($(animItems).hasClass('animation-item')) {
 		animItems = animWrapper;
@@ -29,9 +29,3 @@ function AnimateItems(animWrapper) {
 }
 
 // Animate items
-const animStatsWrappers = $('.');
-if (animStatsWrappers.length > 0) {
-	$(animStatsWrappers).each(function (index, animStatsWrapper) {
-		AnimateItems(animStatsWrapper);
-	});
-}

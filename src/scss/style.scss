@@ -49,71 +49,14 @@ body {
 // ===================================================
 
 // Общие классы
-.socials {
-	display: flex;
-	&-button {
-		display: inline-block;
-		padding: 0.5em;
-		background-color: $txtcolor;
-		transition: all 0.3s ease 0s;
-		&:not(:last-child) {
-			margin-right: 0.75em;
-		}
-		&:hover {
-			background-color: #ffffffbd;
-			transform: translate(1px, 1px);
-		}
-		img {
-			max-width: 100%;
-			height: auto;
-		}
+.animation-item {
+	opacity: 0;
+	transform: translate(0, -100%);
+	transition: all 0.8s ease 0s;
+	&._active {
+		transform: none;
+		opacity: 1;
 	}
-	.twitter {}
-	.discord {}
-	.youtube {}
-	.telegram {}
-}
-.logo {
-	cursor: pointer;
-	transition: all 0.3s ease 0s;
-	&:hover {
-		opacity: 0.7;
-	}
-	img {
-		display: block;
-		max-width: 100%;
-		height: auto;
-	}
-}
-
-// =========================================================
-
-.header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 50;
-	&::before {
-		content: "";
-		@extend %abs100;
-		background-color: $mainbgc;
-		z-index: -1;
-	}
-	&__container {
-		padding: 10px 15px;
-		min-height: 100px;
-		display: flex;
-		align-items: flex-end;
-	}
-	&__logo {
-		margin-bottom: 5px;
-	}
-	&__menu {
-		margin-left: 40px;
-		padding-bottom: 15px;
-	}
-	&__socials {}
 }
 .menu {
 	flex: 1 1 auto;
@@ -156,6 +99,151 @@ body {
 		}
 	}
 }
+
+.socials {
+	display: flex;
+	&-button {
+		display: inline-block;
+		padding: 0.5em;
+		background-color: $txtcolor;
+		transition: all 0.3s ease 0s;
+		&:not(:last-child) {
+			margin-right: 0.75em;
+		}
+		&:hover {
+			background-color: #ffffffbd;
+			transform: translate(1px, 1px);
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	.twitter {}
+	.discord {}
+	.youtube {}
+	.telegram {}
+	.in {}
+}
+
+.logo {
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		opacity: 0.7;
+	}
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.main-title {
+	@include adaptiv-value("font-size", 51, 32, 2);
+	text-transform: uppercase;
+	font-family: $audio;
+	line-height: 1.19;
+	span {
+		color: $greenbgc;
+	}
+}
+.section-title {
+	font-family: $audio;
+	font-size: 2.375em;
+	line-height: 1.2;
+	text-align: center;
+	text-transform: uppercase;
+	span {
+		color: #A8A8A8;
+	}
+}
+
+.block-text {
+	&__title {
+		position: relative;
+		padding-top: 2px;
+		padding-left: 1.05em;
+		font-size: 1.3125em;
+		color: $greenbgc;
+		line-height: 1.52;
+		&::before {
+			content: "";
+			left: 0;
+			top: 0;
+			position: absolute;
+			display: inline-block;
+			width: 0.1em;
+			height: 100%;
+			background-color: $greenbgc;
+			border-left: 1px solid $greenbgc;
+		}
+	}
+	&__text {
+		margin-top: 2em;
+		font-size: 1em;
+		font-family: $inter;
+		line-height: 1.6;
+		> p:not(:last-child) {
+			margin-bottom: 1.125em;
+		}
+	}
+}
+
+a.button {
+	display: inline-block;
+	padding: 1.06em 2.5em 1.6875em 2.5em;
+	font-family: $DMMono;
+	font-size: 1em;
+	text-align: center;
+	color: $mainbgc;
+	text-transform: capitalize;
+	background-color: $greenbgc;
+	border: 1px solid $greenbgc;
+	transition: all 0.3s ease-out 0s;
+	&:hover {
+		font-weight: 700;
+		transform: translate3d(2px, 4px, 4px);
+		box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.164);
+	}
+	&_transp {
+		color: $txtcolor;
+		background-color: transparent;
+		&:hover {
+			color: $greenbgc;
+		}
+	}
+}
+// =========================================================
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	&::before {
+		content: "";
+		@extend %abs100;
+		background-color: $mainbgc;
+		z-index: -1;
+	}
+	&__container {
+		padding: 10px 15px;
+		min-height: 100px;
+		display: flex;
+		align-items: flex-end;
+	}
+	&__logo {
+		margin-bottom: 5px;
+	}
+	&__menu {
+		margin-left: 40px;
+		padding-bottom: 15px;
+	}
+	&__socials {}
+}
+
 
 // Menu Burger
 @media(max-width:$bp760) {
@@ -292,6 +380,7 @@ body {
 		}
 	}
 	&__block-text {
+		transition-delay: 0.3s;
 		margin-top: 43px;
 		> div {
 			@include adaptiv-value("margin-right", 155, 30, 2);
@@ -301,67 +390,6 @@ body {
 		@include adaptiv-value("margin-top", 155, 50, 2);
 	}
 	&__title {}
-}
-.main-title {
-	@include adaptiv-value("font-size", 51, 32, 2);
-	text-transform: uppercase;
-	font-family: $audio;
-	line-height: 1.19;
-}
-.section-title {
-	font-family: $audio;
-	font-size: 2.375em;
-	line-height: 1.2;
-	text-align: center;
-	text-transform: uppercase;
-	span {
-		color: #A8A8A8;
-	}
-}
-.block-text {
-	&__title {
-		position: relative;
-		padding-top: 2px;
-		padding-left: 1.05em;
-		font-size: 1.3125em;
-		color: $greenbgc;
-		line-height: 1.52;
-		&::before {
-			content: "";
-			left: 0;
-			top: 0;
-			position: absolute;
-			display: inline-block;
-			width: 0.1em;
-			height: 100%;
-			background-color: $greenbgc;
-			border-left: 1px solid $greenbgc;
-		}
-	}
-	&__text {
-		margin-top: 2em;
-		font-size: 1em;
-		font-family: $inter;
-		line-height: 1.6;
-		> p:not(:last-child) {
-			margin-bottom: 1.125em;
-		}
-	}
-}
-.button {
-	display: inline-block;
-	padding: 1.06em 2.5em 1.6875em 2.5em;
-	font-family: $DMMono;
-	font-size: 1em;
-	text-align: center;
-	color: $mainbgc;
-	text-transform: capitalize;
-	background-color: $greenbgc;
-	border: 1px solid $greenbgc;
-	&_transp {
-		color: $txtcolor;
-		background-color: transparent;
-	}
 }
 // ===================================================================
 
@@ -445,6 +473,7 @@ body {
 		--marquee-elements-displayed: 1;
 	}
 }
+// Реализация анимации через переменные marque
 .marquee {
 	width: var(--marquee-width);
 	overflow: hidden;
@@ -496,7 +525,7 @@ body {
 .artists {
 	background-color: $mainbgc;
 	&__marquee {
-		padding: 10px 0px
+		padding: 10px 0px;
 	}
 	&__title {
 		@include adaptiv-value("font-size", 79, 32, 2);
@@ -860,12 +889,14 @@ body {
 		@include adaptiv-value("padding-bottom", 110, 55, 2);
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+		grid-template-rows: auto 1fr;
 		grid-gap: 41px 0px;
-		grid-auto-flow: column;
+
 		grid-template-areas:
 			"faq-title faq-content"
 			"faq-image faq-content";
 		@media(max-width:$bp980) {
+			grid-template-columns: repeat(2, 1fr);
 			grid-template-areas:
 				"faq-title faq-image"
 				"faq-content faq-content";
@@ -873,6 +904,7 @@ body {
 			grid-gap: 55px 20px;
 		}
 		@media(max-width:$bp640) {
+			grid-template-columns: minmax(250px, 1fr);
 			grid-template-areas:
 				"faq-title"
 				"faq-content"
@@ -893,26 +925,48 @@ body {
 		}
 	}
 	&__image {
-		grid-area: faq-image;
+		height: fit-content;
 		display: flex;
+		grid-area: faq-image;
+		@media(max-width:$bp640) {
+			justify-content: center;
+		}
 		img {
 			display: block;
 			max-width: 100%;
+			@media(max-width:$bp640) {
+				max-width: 65%;
+			}
 		}
 	}
 	&__content {
+		background-color: $contentbgc;
 		grid-area: faq-content;
 		@media(max-width:$bp980) {
 			padding: 0 15px;
 		}
 	}
 	&-question {
+		padding: 1.5em 1.25em 1.5em 1.8em;
 		&__block-text {
 			> h3 {
-				padding: 0;
+				position: relative;
+				padding-left: 0;
+				padding-right: 1.2em;
 				color: $txtcolor;
 				&::before {
 					display: none;
+				}
+				&::after {
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translate(0, -50%);
+					content: "";
+					display: inline-block;
+					width: 1em;
+					height: 1.1em;
+					background-color: $txtcolor;
 				}
 			}
 		}
@@ -920,20 +974,206 @@ body {
 }
 // ===============================================================================
 
+.team {
+	background-color: $mainbgc;
+	&__marquee {
+		@extend .artists__marquee;
+	}
+	&__title {
+		@extend .artists__title;
+	}
+	&__container {
+		@include adaptiv-value("padding-top", 120, 55, 2);
+		@include adaptiv-value("padding-bottom", 120, 65, 2);
+	}
+	&__content {
+		@media(max-width:$bp1280) {
+			padding: 0px 15px;
+		}
+	}
+	&__members {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		@media(max-width:$bp760) {
+			justify-content: center;
+			grid-template-columns: minmax(200px, 75%);
+		}
+		@include adaptiv-value("grid-column-gap", 100, 45, 2);
+		grid-row-gap: 50px;
+	}
+
+	&-member {
+		&__photo {
+			display: flex;
+			justify-content: center;
+			img {
+				display: block;
+				max-width: 100%;
+				@media(max-width:$bp1024) {
+					max-width: 85%;
+				}
+				@media(max-width:$bp760) {
+					max-width: 60%;
+				}
+			}
+		}
+		&__data {
+			margin-top: 1.2em;
+			text-align: center;
+		}
+		&__name {
+			font-size: 1.3125em;
+			line-height: 1.32;
+			text-transform: uppercase;
+			margin-bottom: 0.87em;
+		}
+		&__job {
+			@extend .our-partners__title;
+		}
+		&__socials {
+			margin: 1.37em 0;
+			justify-content: center;
+		}
+		&__desc {
+			@extend .block-text__text;
+		}
+	}
+}
+// =============================================================================
+
+.join-discord {
+	background-color: $mainbgc;
+	&__container {
+		@include adaptiv-value("padding-top", 120, 55, 2);
+		@include adaptiv-value("padding-bottom", 120, 65, 2);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: 40px;
+		@media(max-width:$bp760) {
+			flex-direction: column;
+			row-gap: 5em;
+		}
+	}
+
+	&__content {
+		max-width: 500px;
+		@media(max-width:$bp1024) {
+			padding: 0 15px;
+		}
+	}
+
+	&__title {}
+
+	&__block-text {
+		margin-bottom: 2.3em;
+		> div {
+			margin-top: 3em;
+		}
+	}
+
+	&__button {
+		.button {
+			padding: 1em 2.8em;
+			max-width: fit-content;
+			display: flex;
+			align-items: center;
+			&::before {
+				display: inline-block;
+				margin-right: 1ch;
+				content: url(@img/socials/discord.png);
+			}
+		}
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img {
+			max-width: 100%;
+			@media(max-width:$bp1024) {
+				max-width: 85%;
+			}
+		}
+	}
+}
+// ==============================================================================
+
 .footer {
 	background-color: $footerbgc;
 	&__container {
 		@include adaptiv-value("padding-top", 100, 55, 2);
 		@include adaptiv-value("padding-bottom", 100, 55, 2);
+		display: grid;
+		grid-template-columns: 23.4% 1fr 18% 24.5%;
+		grid-template-areas:
+			"logo nav-footer devs soc"
+			"copy nav-footer .    .";
+		@media(max-width: ($fullContainerWidth+px)) {
+			grid-template-columns: minmax(180px, 33%) 1fr;
+			grid-template-areas:
+				"logo nav-footer"
+				"copy nav-footer"
+				"devs soc";
+			grid-gap: 55px;
+		}
+		@media(max-width:$bp640) {
+			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+			grid-template-areas:
+				"logo logo"
+				"copy copy"
+				"nav-footer nav-footer"
+				"devs soc";
+			grid-gap: 40px 0px;
+		}
+		@media(max-width:$bp480) {
+			grid-template-areas:
+				"logo"
+				"copy"
+				"nav-footer"
+				"devs"
+				"soc";
+			grid-gap: 45px 0px;
+		}
 	}
 	&__logo {
+		grid-area: logo;
+		@media(max-width:$bp640) {
+			justify-self: center;
+		}
+		@media(max-width:$bp480) {
+			margin-bottom: -20px;
+		}
 		img {
 			max-width: 102.5px;
 		}
 	}
-	&__nav {}
-	&__socials {}
+	&__nav {
+		grid-area: nav-footer;
+		@media(max-width:$bp480) {
+			margin: 10px 0px;
+		}
+	}
+	&__socials {
+		grid-area: soc;
+		align-self: flex-start;
+		justify-content: flex-end;
+		@media(max-width: ($fullContainerWidth+px)) {
+			align-self: center;
+			justify-content: center;
+		}
+	}
 	&-devs {
+		grid-area: devs;
+		@media(max-width:$bp640) {
+			justify-self: center;
+		}
+		@media(max-width:$bp480) {
+			margin-bottom: -20px;
+		}
+		font-size: 0.83em;
+		line-height: 1.18;
 		& p:not(:last-child) {
 			margin-bottom: 1.8em;
 		}
@@ -944,12 +1184,26 @@ body {
 			}
 		}
 	}
-	&-copyrights {}
+	&-copyrights {
+		grid-area: copy;
+		align-self: flex-end;
+		@media(max-width:$bp640) {
+			justify-self: center;
+		}
+		font-size: 0.83em;
+		line-height: 1.58;
+	}
 }
 
 .nav-footer {
 	display: flex;
-	&__column {}
+	&__column {
+		flex: 0 0 50%;
+		@media(max-width:$bp640) {
+			display: flex;
+			justify-content: center;
+		}
+	}
 	&__list {}
 	&__item {
 		&:not(:last-child) {
