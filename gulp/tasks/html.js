@@ -20,7 +20,7 @@ export const html = () => {
 			verbose: true
 		}))
 		*/
-		.pipe(app.plugins.replace(/@img\//g, 'img/'))
+		.pipe(app.plugins.replace(/@img\//g, 'assets/img/'))
 		.pipe(
 			app.plugins.if(
 				app.isBuild,
@@ -33,15 +33,11 @@ export const html = () => {
 				versionNumber({
 					'value': '%DT%',
 					'append': {
-						'key': 'v',
+						'key': 'v_',
 						'cover': 0,
 						'to': [
-							'css',
-							'js',
+							'js'
 						]
-					},
-					'output': {
-						'file': 'gulp/version.json'
 					}
 				})
 			)

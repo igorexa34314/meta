@@ -1,0 +1,66 @@
+// Переменные для marquee
+:root {
+	--marquee-width: 100%;
+	/* --marquee-elements: 12; */
+	/* defined with JavaScript */
+	--marquee-elements-displayed: 3;
+	--marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+	--marquee-animation-duration: calc(var(--marquee-elements) * 1.3s);
+	@media(min-width:$bp2560) {
+		--marquee-elements-displayed: 4;
+	}
+	@media(max-width:$bp1600) {
+		--marquee-elements-displayed: 2;
+	}
+	@media(max-width:$bp980) {
+		--marquee-elements-displayed: 1;
+	}
+}
+// Реализация анимации через переменные marque
+.marquee {
+	width: var(--marquee-width);
+	overflow: hidden;
+	position: relative;
+	&::before, &::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		width: 10%;
+		height: 100%;
+		z-index: 1;
+	}
+	&::before {
+		left: 0;
+		background: linear-gradient(to right, #111 0%, transparent 100%);
+	}
+	&::after {
+		right: 0;
+		background: linear-gradient(to left, #111 0%, transparent 100%);
+	}
+	&-content {
+		height: 100%;
+		display: flex;
+		animation: scrolling var(--marquee-animation-duration) linear infinite;
+		&:hover {
+			animation-play-state: paused;
+		}
+		> * {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-shrink: 0;
+			width: var(--marquee-element-width);
+			max-height: 100%;
+			white-space: nowrap;
+		}
+	}
+}
+@keyframes scrolling {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
+	}
+}
+// ===================================================================

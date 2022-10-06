@@ -61,4 +61,3 @@ export const scss = () => {
 		.pipe(app.gulp.dest(app.path.build.css))
 		.pipe(app.plugins.browsersync.stream());
 }
-

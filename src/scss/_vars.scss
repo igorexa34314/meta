@@ -10,29 +10,6 @@ $fullContainerWidth: $maxWidthContainer + $cntpd + $cntpd;
 
 $fullherocnt: ($herocnt + $cntpd + $cntpd) + px;
 
-// Адаптивное свойство
-@mixin adaptiv-value($property, $startSize, $minSize, $type) {
-	$addSize: $startSize - $minSize;
-
-	@if $type==1 {
-		// Только если меньше контейнера
-		#{$property}: $startSize + px;
-		@media(min-width: #{$fullContainerWidth + px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$fullContainerWidth - 320}));
-		}
-	}
-	@if $type==2 {
-		// Только если больше контейнера
-		#{$property}: $startSize + px;
-		@media(max-width: #{$fullContainerWidth + px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
-		}
-	}
-	@else {
-		// Всегда
-		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
-	}
-}
 
 // Основные переменные
 $mainbgc: #000000;

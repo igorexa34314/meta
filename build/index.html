@@ -5,17 +5,19 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.min.css?v=20220910220834">
-	<link rel="shortcut icon" href="img/logo.svg" type="image/svg">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="assets/css/style.min.css">
+	<link rel="shortcut icon" href="assets/img/logo.svg" type="image/svg">
 	<title>Meta</title>
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="page">
 		<header class="header">
 	<div class="header__container">
 		<div class="header__logo logo">
-			<img src="img/logo.svg" alt="Logo">
+			<img src="assets/img/logo.svg" alt="Logo">
 		</div>
 		<div class="header__menu menu">
 			<div class="menu__burger burger-menu"><span></span></div>
@@ -27,20 +29,32 @@
 				</ul>
 			</div>
 		</div>
-		<div class="header__socials socials">
-			<a href="" class="socials-button twitter"><picture><source srcset="img/socials/twitter.webp" type="image/webp"><img src="img/socials/twitter.png" alt="Twitter"></picture></a>
-			<a href="" class="socials-button discord"><picture><source srcset="img/socials/discord.webp" type="image/webp"><img src="img/socials/discord.png" alt="Discord"></picture></a>
-			<a href="" class="socials-button youtube"><picture><source srcset="img/socials/youtube.webp" type="image/webp"><img src="img/socials/youtube.png" alt="Youtube"></picture></a>
-			<a href="" class="socials-button telegram"><picture><source srcset="img/socials/telegram.webp" type="image/webp"><img src="img/socials/telegram.png" alt="Telegram"></picture></a>
+		<div class="header__socials socials" data-da=".menu__body,480,last">
+			<a href="" class="socials-button twitter"><picture><source srcset="assets/img/socials/twitter.webp" type="image/webp"><img src="assets/img/socials/twitter.png" alt="Twitter"></picture></a>
+			<a href="" class="socials-button discord"><picture><source srcset="assets/img/socials/discord.webp" type="image/webp"><img src="assets/img/socials/discord.png" alt="Discord"></picture></a>
+			<a href="" class="socials-button youtube"><picture><source srcset="assets/img/socials/youtube.webp" type="image/webp"><img src="assets/img/socials/youtube.png" alt="Youtube"></picture></a>
+			<a href="" class="socials-button telegram"><picture><source srcset="assets/img/socials/telegram.webp" type="image/webp"><img src="assets/img/socials/telegram.png" alt="Telegram"></picture></a>
 		</div>
 	</div>
 </header>
 		<main class="main">
 			<section class="hero">
+				<div class="hero-bg"></div>
+				<div class="hero-slider swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><picture><source srcset="assets/img/hero/slider/slide1.webp" type="image/webp"><img src="assets/img/hero/slider/slide1.png" alt="Slide image"></picture></div>
+						<div class="swiper-slide"><picture><source srcset="assets/img/hero/slider/slide2.webp" type="image/webp"><img src="assets/img/hero/slider/slide2.png" alt="Slide image"></picture></div>
+						<div class="swiper-slide"><picture><source srcset="assets/img/hero/slider/slide3.webp" type="image/webp"><img src="assets/img/hero/slider/slide3.png" alt="Slide image"></picture></div>
+						<div class="swiper-slide"><picture><source srcset="assets/img/hero/slider/slide4.webp" type="image/webp"><img src="assets/img/hero/slider/slide4.png" alt="Slide image"></picture></div>
+						<div class="swiper-slide"><picture><source srcset="assets/img/hero/slider/slide5.webp" type="image/webp"><img src="assets/img/hero/slider/slide5.png" alt="Slide image"></picture></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
 				<div class="hero__container">
-					<div class="hero__content animation-wrapper">
-						<h1 class="hero__title main-title animation-item">Meta record label</h1>
-						<div class="hero__block-text block-text animation-item">
+					<div class="hero__content">
+						<h1 class="hero__title main-title animation-item" data-aos="fade-up">Meta record label</h1>
+						<div class="hero__block-text block-text" data-aos="fade-up" data-aos-offset="200"
+							data-aos-delay="400">
 							<div class="block-text__text">
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
 									elementum tristique.</p>
@@ -51,16 +65,17 @@
 				</div>
 			</section>
 			<section class="nft-collection">
-				<div class="nft-collection__container animation-wrapper">
-					<h2 class="nft-collection__title section-title animation-item">
+				<div class="nft-collection__container">
+					<h2 class="nft-collection__title section-title" data-aos="fade-down">
 						wave NFT <span>collection of 777</span>
 					</h2>
 					<div class="nft-collection__content">
-						<div class="nft-collection__block-text block-text animation-wrapper">
-							<h3 class="block-text__title animation-item">META WAVE NFT is your pass to Meta Record Label
+						<div class="nft-collection__block-text block-text">
+							<h3 class="block-text__title" data-aos="zoom-out-left">META WAVE NFT is your pass to Meta Record
+								Label
 								ecosystem. It is your
 								access to our industry experts, established artists, and partners.</h3>
-							<div class="block-text__text animation-item">
+							<div class="block-text__text" data-aos="zoom-out-left" data-aos-delay="400">
 								<p>Hac habitasse platea dictumst vestibulum rhoncus est. Sit amet dictum sit amet justo. Tortor
 									aliquam nulla facilisi cras.</p>
 								<p>Maecenas ultricies mi eget mauris pharetra. Sit amet consectetur adipiscing elit ut aliquam
@@ -74,8 +89,8 @@
 						<div class="nft-collection__button"><a href="" class="button button_transp">Get one on OpenSea</a>
 						</div>
 					</div>
-					<div class="nft-collection__image animation-item"><img src="img/nft-collection/collection-bg.png"
-							alt="Our nft collection"></div>
+					<div class="nft-collection__image" data-aos="zoom-out" data-aos-delay="300"><img
+							src="assets/img/nft-collection/collection-bg.png" alt="Our nft collection"></div>
 				</div>
 			</section>
 			<section class="artists">
@@ -86,57 +101,57 @@
 				</div>
 				<div class="artists__container">
 					<div class="artists__content">
-						<div class="artists__items animation-wrapper">
-							<div class="artists__item animation-item">
-								<div class="artists__photo"><picture><source srcset="img/artists/photo1.webp" type="image/webp"><img src="img/artists/photo1.png" alt="Mark Popson"></picture></div>
+						<div class="artists__items">
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="0">
+								<div class="artists__photo"><picture><source srcset="assets/img/artists/photo1.webp" type="image/webp"><img src="assets/img/artists/photo1.png" alt="Mark Popson"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Mark Popson</p>
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
-								<div class="artists__photo"><picture><source srcset="img/artists/photo2.webp" type="image/webp"><img src="img/artists/photo2.png" alt="Pete Bentz"></picture></div>
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="150">
+								<div class="artists__photo"><picture><source srcset="assets/img/artists/photo2.webp" type="image/webp"><img src="assets/img/artists/photo2.png" alt="Pete Bentz"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Pete Bentz</p>
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
-								<div class="artists__photo"><picture><source srcset="img/artists/photo3.webp" type="image/webp"><img src="img/artists/photo3.png" alt="Daniela Youth"></picture></div>
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="300">
+								<div class="artists__photo"><picture><source srcset="assets/img/artists/photo3.webp" type="image/webp"><img src="assets/img/artists/photo3.png" alt="Daniela Youth"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Daniela Youth</p>
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
-								<div class="artists__photo"><picture><source srcset="img/artists/photo4.webp" type="image/webp"><img src="img/artists/photo4.png" alt="Roman Gore"></picture></div>
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="450">
+								<div class="artists__photo"><picture><source srcset="assets/img/artists/photo4.webp" type="image/webp"><img src="assets/img/artists/photo4.png" alt="Roman Gore"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Roman Gore</p>
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
-								<div class="artists__photo"><picture><source srcset="img/artists/photo5.webp" type="image/webp"><img src="img/artists/photo5.png" alt="Tonya"></picture></div>
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="600">
+								<div class="artists__photo"><picture><source srcset="assets/img/artists/photo5.webp" type="image/webp"><img src="assets/img/artists/photo5.png" alt="Tonya"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Tonya</p>
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
-								<div class="artists__photo"><picture><source srcset="img/artists/photo6.webp" type="image/webp"><img src="img/artists/photo6.png" alt="Ivor"></picture></div>
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="750">
+								<div class="artists__photo"><picture><source srcset="assets/img/artists/photo6.webp" type="image/webp"><img src="assets/img/artists/photo6.png" alt="Ivor"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Ivor</p>
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
-								<div class="artists__photo"><picture><source srcset="img/artists/photo7.webp" type="image/webp"><img src="img/artists/photo7.png" alt="Somae Petit"></picture></div>
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="900">
+								<div class="artists__photo"><picture><source srcset="assets/img/artists/photo7.webp" type="image/webp"><img src="assets/img/artists/photo7.png" alt="Somae Petit"></picture></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
 										<p>Somae Petit</p>
@@ -148,8 +163,8 @@
 				</div>
 			</section>
 			<section class="story">
-				<div class="story__container animation-wrapper">
-					<h2 class="story__title section-title animation-item">MRL. <span>the story.</span></h2>
+				<div class="story__container">
+					<h2 class="story__title section-title" data-aos="fade-up">MRL. <span>the story.</span></h2>
 					<div class="story__content">
 						<div class="story-navbar">
 							<ul class="story-navbar__list">
@@ -165,7 +180,7 @@
 						<div class="story__items">
 							<div class="story-item _active" id="story1">
 								<div class="story-item__wrapper">
-									<div class="story-item__image"><picture><source srcset="img/story/story1.webp" type="image/webp"><img src="img/story/story1.png" alt="Story1"></picture></div>
+									<div class="story-item__image"><picture><source srcset="assets/img/story/story1.webp" type="image/webp"><img src="assets/img/story/story1.png" alt="Story1"></picture></div>
 									<div class="story-item__block-text block-text">
 										<h3 class="block-text__title">META WAVE NFT is your pass to Meta Record Label ecosystem.
 											It is your access to our industry experts, established artists, and partners.</h3>
@@ -186,7 +201,7 @@
 							</div>
 							<div class="story-item" id="story2">
 								<div class="story-item__wrapper">
-									<div class="story-item__image"><picture><source srcset="img/story/story1.webp" type="image/webp"><img src="img/story/story1.png" alt="Story1"></picture></div>
+									<div class="story-item__image"><picture><source srcset="assets/img/story/story1.webp" type="image/webp"><img src="assets/img/story/story1.png" alt="Story1"></picture></div>
 									<div class="story-item__block-text block-text">
 										<h3 class="block-text__title">META WAVE NFT is your pass to Meta Record Label ecosystem.
 											It is your access to our industry experts, established artists, and partners.</h3>
@@ -207,7 +222,7 @@
 							</div>
 							<div class="story-item" id="story3">
 								<div class="story-item__wrapper">
-									<div class="story-item__image"><picture><source srcset="img/story/story1.webp" type="image/webp"><img src="img/story/story1.png" alt="Story1"></picture></div>
+									<div class="story-item__image"><picture><source srcset="assets/img/story/story1.webp" type="image/webp"><img src="assets/img/story/story1.png" alt="Story1"></picture></div>
 									<div class="story-item__block-text block-text">
 										<h3 class="block-text__title">META WAVE NFT is your pass to Meta Record Label ecosystem.
 											It is your access to our industry experts, established artists, and partners.</h3>
@@ -229,13 +244,15 @@
 						</div>
 					</div>
 				</div>
+				<div class="story-footer-bg"></div>
 			</section>
 			<section class="roadmap">
 				<div class="roadmap__container ">
-					<h2 class="roadmap__title section-title  animation-wrapper animation-item">Roadmap</h2>
+					<h2 class="roadmap__title section-title ">Roadmap</h2>
 					<div class="roadmap__content">
 						<div class="roadmap__items ">
-							<div class="roadmap-item _completed animation-wrapper animation-item">
+							<div class="roadmap-item _completed" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+								data-aos-delay="100">
 								<div class="roadmap-item__header">
 									<div class="roadmap-item__count"></div>
 									<div class="roadmap-item__subtitle"></div>
@@ -252,11 +269,12 @@
 											<p>WAVE NFTs will be 100% pre-minted and launched as an OpenOcean collection</p>
 										</div>
 									</div>
-									<div class="roadmap-item__image"><picture><source srcset="img/roadmap/pre-launch.webp" type="image/webp"><img src="img/roadmap/pre-launch.png" alt="Pre launch"></picture>
+									<div class="roadmap-item__image"><picture><source srcset="assets/img/roadmap/pre-launch.webp" type="image/webp"><img src="assets/img/roadmap/pre-launch.png" alt="Pre launch"></picture>
 									</div>
 								</div>
 							</div>
-							<div class="roadmap-item animation-wrapper animation-item">
+							<div class="roadmap-item" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+								data-aos-delay="100">
 								<div class="roadmap-item__header">
 									<div class="roadmap-item__count"></div>
 									<div class="roadmap-item__subtitle"></div>
@@ -275,11 +293,12 @@
 												of WAVE NFT holders</p>
 										</div>
 									</div>
-									<div class="roadmap-item__image"><picture><source srcset="img/roadmap/growth.webp" type="image/webp"><img src="img/roadmap/growth.png" alt="Growth"></picture>
+									<div class="roadmap-item__image"><picture><source srcset="assets/img/roadmap/growth.webp" type="image/webp"><img src="assets/img/roadmap/growth.png" alt="Growth"></picture>
 									</div>
 								</div>
 							</div>
-							<div class="roadmap-item animation-wrapper animation-item">
+							<div class="roadmap-item" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+								data-aos-delay="100">
 								<div class="roadmap-item__header">
 									<div class="roadmap-item__count"></div>
 									<div class="roadmap-item__subtitle"></div>
@@ -297,7 +316,7 @@
 												Metaverse. Check the concert schedule in our <a href="">Discord</a></p>
 										</div>
 									</div>
-									<div class="roadmap-item__image"><picture><source srcset="img/roadmap/new-stage.webp" type="image/webp"><img src="img/roadmap/new-stage.png" alt="New stage"></picture>
+									<div class="roadmap-item__image"><picture><source srcset="assets/img/roadmap/new-stage.webp" type="image/webp"><img src="assets/img/roadmap/new-stage.png" alt="New stage"></picture>
 									</div>
 								</div>
 							</div>
@@ -307,43 +326,45 @@
 				<div class="roadmap-bg"></div>
 			</section>
 			<section class="our-partners">
-				<div class="our-partners__container animation-wrapper">
-					<h3 class="our-partners__title animation-item">Our partners</h3>
+				<div class="our-partners__container">
+					<h3 class="our-partners__title" data-aos="fade-down" data-aos-mirror="true" data-aos-offset="50">Our
+						partners
+					</h3>
 					<div class="our-partners__content">
 						<div class="our-partners__items">
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="0">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="assets/img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="50">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="assets/img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="100">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="assets/img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="150">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="assets/img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="200">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="assets/img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="250">
 								<a href="" class="our-partners-item__link">
-									<div class="our-partners-item__icon"><img src="img/our-partners/logoholder.svg"
+									<div class="our-partners-item__icon"><img src="assets/img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
@@ -353,9 +374,11 @@
 			</section>
 			<section class="faq">
 				<div class="faq__container">
-					<h2 class="faq__title section-title">Frequently <span>asked</span> questions</span></h2>
+					<h2 class="faq__title section-title" data-aos="fade-down" data-aos-delay="200">Frequently
+						<span>asked</span> questions</span>
+					</h2>
 					<div class="faq__content">
-						<div class="faq-question">
+						<div class="faq-question" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic">
 							<div class="faq-question__block-text block-text">
 								<h3 class="block-text__title">How can I get into Meta RL?</h3>
 								<div class="block-text__text">
@@ -366,7 +389,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="faq-question">
+						<div class="faq-question" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic">
 							<div class="faq-question__block-text block-text">
 								<h3 class="block-text__title">When is the NFT launch?</h3>
 								<div class="block-text__text">
@@ -377,7 +400,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="faq-question">
+						<div class="faq-question" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic">
 							<div class="faq-question__block-text block-text">
 								<h3 class="block-text__title">Can I hold META WAVE NFT as an investment?</h3>
 								<div class="block-text__text">
@@ -388,7 +411,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="faq-question">
+						<div class="faq-question" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic">
 							<div class="faq-question__block-text block-text">
 								<h3 class="block-text__title">Where can I get a WAVE NFT?</h3>
 								<div class="block-text__text">
@@ -400,7 +423,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="faq__image"><picture><source srcset="img/faq/faq-img.webp" type="image/webp"><img src="img/faq/faq-img.png" alt="Faq image"></picture></div>
+					<div class="faq__image" data-aos="fade-right"><picture><source srcset="assets/img/faq/faq-img.webp" type="image/webp"><img src="assets/img/faq/faq-img.png" alt="Faq image"></picture></div>
 				</div>
 			</section>
 			<section class="team">
@@ -409,18 +432,18 @@
 						<h2 class="team__title main-title">Team</h2>
 					</div>
 				</div>
-				<div class="team__container animation-wrapper">
+				<div class="team__container">
 					<div class="team__content">
 						<div class="team__members">
-							<div class="team-member animation-item">
-								<div class="team-member__photo"><picture><source srcset="img/team/profile1.webp" type="image/webp"><img src="img/team/profile1.png" alt="Shaky Lake"></picture></div>
+							<div class="team-member" data-aos="zoom-out-up" data-aos-delay="100">
+								<div class="team-member__photo"><picture><source srcset="assets/img/team/profile1.webp" type="image/webp"><img src="assets/img/team/profile1.png" alt="Shaky Lake"></picture></div>
 								<div class="team-member__data">
 									<h3 class="team-member__name">Shaky Lake</h3>
 									<div class="team-member__job">Founder</div>
 									<div class="team-member__socials socials">
-										<a href="" class="socials-button twitter"><img src="img/socials/twitter.png"
+										<a href="" class="socials-button twitter"><img src="assets/img/socials/twitter.png"
 												alt="Twitter"></a>
-										<a href="" class="socials-button in"><picture><source srcset="img/socials/in.webp" type="image/webp"><img src="img/socials/in.png" alt="In"></picture></a>
+										<a href="" class="socials-button in"><picture><source srcset="assets/img/socials/in.webp" type="image/webp"><img src="assets/img/socials/in.png" alt="In"></picture></a>
 									</div>
 									<div class="team-member__desc">
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -428,15 +451,15 @@
 									</div>
 								</div>
 							</div>
-							<div class="team-member animation-item">
-								<div class="team-member__photo"><picture><source srcset="img/team/profile2.webp" type="image/webp"><img src="img/team/profile2.png" alt="Baky Hike"></picture></div>
+							<div class="team-member" data-aos="zoom-out-up" data-aos-delay="200">
+								<div class="team-member__photo"><picture><source srcset="assets/img/team/profile2.webp" type="image/webp"><img src="assets/img/team/profile2.png" alt="Baky Hike"></picture></div>
 								<div class="team-member__data">
 									<h3 class="team-member__name">Baky Hike</h3>
 									<div class="team-member__job">Co-founder</div>
 									<div class="team-member__socials socials">
-										<a href="" class="socials-button twitter"><img src="img/socials/twitter.png"
+										<a href="" class="socials-button twitter"><img src="assets/img/socials/twitter.png"
 												alt="Twitter"></a>
-										<a href="" class="socials-button in"><picture><source srcset="img/socials/in.webp" type="image/webp"><img src="img/socials/in.png" alt="In"></picture></a>
+										<a href="" class="socials-button in"><picture><source srcset="assets/img/socials/in.webp" type="image/webp"><img src="assets/img/socials/in.png" alt="In"></picture></a>
 									</div>
 									<div class="team-member__desc">
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -444,15 +467,15 @@
 									</div>
 								</div>
 							</div>
-							<div class="team-member animation-item">
-								<div class="team-member__photo"><picture><source srcset="img/team/profile3.webp" type="image/webp"><img src="img/team/profile3.png" alt="Vania Do"></picture></div>
+							<div class="team-member" data-aos="zoom-out-up" data-aos-delay="300">
+								<div class="team-member__photo"><picture><source srcset="assets/img/team/profile3.webp" type="image/webp"><img src="assets/img/team/profile3.png" alt="Vania Do"></picture></div>
 								<div class="team-member__data">
 									<h3 class="team-member__name">Vania Do</h3>
 									<div class="team-member__job">Producer</div>
 									<div class="team-member__socials socials">
-										<a href="" class="socials-button twitter"><img src="img/socials/twitter.png"
+										<a href="" class="socials-button twitter"><img src="assets/img/socials/twitter.png"
 												alt="Twitter"></a>
-										<a href="" class="socials-button in"><picture><source srcset="img/socials/in.webp" type="image/webp"><img src="img/socials/in.png" alt="In"></picture></a>
+										<a href="" class="socials-button in"><picture><source srcset="assets/img/socials/in.webp" type="image/webp"><img src="assets/img/socials/in.png" alt="In"></picture></a>
 									</div>
 									<div class="team-member__desc">
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -465,26 +488,31 @@
 				</div>
 			</section>
 			<section class="join-discord">
-				<div class="join-discord__container animation-wrapper">
+				<div class="join-discord__container">
 					<div class="join-discord__content">
-						<h2 class="join-discord__title main-title animation-item">Join our <span>Discord</span></h2>
-						<div class="join-discord__block-text block-text animation-item">
+						<h2 class="join-discord__title main-title" data-aos="fade-down">Join our <span>Discord</span></h2>
+						<div class="join-discord__block-text block-text" data-aos="fade-down">
 							<div class="block-text__text">
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
 									elementum tristique.</p>
 							</div>
 						</div>
-						<div class="join-discord__button animation-item"><a href="" class="button">Join Discord</a>
+						<div class="join-discord__button" data-aos="zoom-in" data-aos-duration="400">
+							<a href="" class="button">
+								<span><picture><source srcset="assets/img/socials/discord.webp" type="image/webp"><img src="assets/img/socials/discord.png" alt="Ds Icon"></picture></span>
+								<span>Join Discord</span>
+							</a>
 						</div>
 					</div>
-					<div class="join-discord__image animation-item"><picture><source srcset="img//join-discord/dc-bg.webp" type="image/webp"><img src="img//join-discord/dc-bg.png" alt="Wave"></picture></div>
+					<div class="join-discord__image" data-aos="fade-left"><picture><source srcset="assets/img//join-discord/dc-bg.webp" type="image/webp"><img src="assets/img//join-discord/dc-bg.png" alt="Wave"></picture>
+					</div>
 				</div>
 			</section>
 		</main>
 		<footer class="footer">
 	<div class="footer__container">
 		<div class="footer__logo logo">
-			<img src="img/logo.svg" alt="Logo">
+			<img src="assets/img/logo.svg" alt="Logo">
 		</div>
 		<div class="footer-copyrights">
 			<p><span>©</span>2022 All rights reserved</p>
@@ -510,20 +538,24 @@
 			<p>Developed by <a href="">Anastasiia G.</a></p>
 		</div>
 		<div class="footer__socials socials">
-			<a href="" class="socials-button twitter"><picture><source srcset="img/socials/twitter.webp" type="image/webp"><img src="img/socials/twitter.png" alt="Twitter"></picture></a>
-			<a href="" class="socials-button discord"><picture><source srcset="img/socials/discord.webp" type="image/webp"><img src="img/socials/discord.png" alt="Discord"></picture></a>
-			<a href="" class="socials-button youtube"><picture><source srcset="img/socials/youtube.webp" type="image/webp"><img src="img/socials/youtube.png" alt="Youtube"></picture></a>
-			<a href="" class="socials-button telegram"><picture><source srcset="img/socials/telegram.webp" type="image/webp"><img src="img/socials/telegram.png" alt="Telegram"></picture></a>
+			<a href="" class="socials-button twitter"><picture><source srcset="assets/img/socials/twitter.webp" type="image/webp"><img src="assets/img/socials/twitter.png" alt="Twitter"></picture></a>
+			<a href="" class="socials-button discord"><picture><source srcset="assets/img/socials/discord.webp" type="image/webp"><img src="assets/img/socials/discord.png" alt="Discord"></picture></a>
+			<a href="" class="socials-button youtube"><picture><source srcset="assets/img/socials/youtube.webp" type="image/webp"><img src="assets/img/socials/youtube.png" alt="Youtube"></picture></a>
+			<a href="" class="socials-button telegram"><picture><source srcset="assets/img/socials/telegram.webp" type="image/webp"><img src="assets/img/socials/telegram.png" alt="Telegram"></picture></a>
 		</div>
+		<form action="" class="contact-form" method="" id="contact-form">
+			<input type="text" name="email" placeholder="Enter your email">
+			<button type="submit" class="button">Subscribe</button>
+		</form>
 	</div>
 </footer>
 	</div>
 
 	<!--Подключаем Jquery-->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js?v=20220910220834"
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js?v_=20221006195615"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<!--Подключаем JS-->
-	<script src="js/main.min.js?v=20220910220834"></script>
+	<script src="assets/js/main.min.js?v_=20221006195615"></script>
 </body>
 
 </html>

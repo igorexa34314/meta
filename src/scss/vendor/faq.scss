@@ -1,0 +1,96 @@
+.faq {
+	background-color: $mainbgc;
+	&__container {
+		@include adaptiv-value("padding-top", 120, 65);
+		@include adaptiv-value("padding-bottom", 110, 55);
+		display: grid;
+		grid-template-columns: repeat(2, minmax(210px, 1fr));
+		grid-template-rows: auto 1fr;
+		grid-gap: 41px 0px;
+		grid-template-areas:
+			"faq-title faq-content"
+			"faq-image faq-content";
+		@media(max-width:$bp980) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-areas:
+				"faq-title faq-image"
+				"faq-content faq-content";
+			grid-gap: 55px 20px;
+		}
+		@media(max-width:$bp640) {
+			grid-template-columns: auto;
+			grid-template-areas:
+				"faq-title"
+				"faq-content"
+				"faq-image";
+		}
+	}
+	&__title {
+		grid-area: faq-title;
+		text-align: left;
+		height: fit-content;
+		max-width: 351px;
+		@media(max-width:$bp980) {
+			margin-left: 1em;
+			align-self: center;
+			max-width: none;
+		}
+		@media(max-width:$bp760) {
+			padding: 0 15px;
+		}
+		@media(max-width:$bp640) {
+			margin: 0 auto;
+		}
+	}
+	&__image {
+		height: fit-content;
+		display: flex;
+		grid-area: faq-image;
+		@media(max-width:$bp980) {
+			justify-content: center;
+		}
+		img {
+			display: block;
+			max-width: 100%;
+			@media(max-width:$bp980) {
+				max-width: 70%;
+			}
+			@media(max-width:$bp640) {
+				max-width: 55%;
+			}
+		}
+	}
+	&__content {
+		background-color: $contentbgc;
+		grid-area: faq-content;
+		@media(max-width:$bp980) {
+			padding: 0 15px;
+		}
+	}
+	&-question {
+		padding: 1.5em 1.25em 1.5em 1.8em;
+		&__block-text {
+			> h3 {
+				position: relative;
+				padding-left: 0;
+				padding-right: 1.2em;
+				color: $txtcolor;
+				&::before {
+					display: none;
+				}
+				&::after {
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translate(0, -50%);
+					content: "";
+					display: inline-block;
+					width: 1em;
+					height: 1.1em;
+					background-color: $txtcolor;
+				}
+			}
+		}
+	}
+}
+// ===============================================================================

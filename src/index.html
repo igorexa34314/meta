@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@@include('html/head.html',{})
+@@include('parts/head.html',{
+"title": "Meta"
+})
 
 <body>
-	<div class="wrapper">
-		@@include('html/header.html',{})
+	<div class="page">
+		@@include('parts/header.html',{})
 		<main class="main">
 			<section class="hero">
+				<div class="hero-bg"></div>
+				<div class="hero-slider swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="@img/hero/slider/slide1.png" alt="Slide image"></div>
+						<div class="swiper-slide"><img src="@img/hero/slider/slide2.png" alt="Slide image"></div>
+						<div class="swiper-slide"><img src="@img/hero/slider/slide3.png" alt="Slide image"></div>
+						<div class="swiper-slide"><img src="@img/hero/slider/slide4.png" alt="Slide image"></div>
+						<div class="swiper-slide"><img src="@img/hero/slider/slide5.png" alt="Slide image"></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
 				<div class="hero__container">
-					<div class="hero__content animation-wrapper">
-						<h1 class="hero__title main-title animation-item">Meta record label</h1>
-						<div class="hero__block-text block-text animation-item">
+					<div class="hero__content">
+						<h1 class="hero__title main-title animation-item" data-aos="fade-up">Meta record label</h1>
+						<div class="hero__block-text block-text" data-aos="fade-up" data-aos-offset="200"
+							data-aos-delay="400">
 							<div class="block-text__text">
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
 									elementum tristique.</p>
@@ -22,16 +36,17 @@
 				</div>
 			</section>
 			<section class="nft-collection">
-				<div class="nft-collection__container animation-wrapper">
-					<h2 class="nft-collection__title section-title animation-item">
+				<div class="nft-collection__container">
+					<h2 class="nft-collection__title section-title" data-aos="fade-down">
 						wave NFT <span>collection of 777</span>
 					</h2>
 					<div class="nft-collection__content">
-						<div class="nft-collection__block-text block-text animation-wrapper">
-							<h3 class="block-text__title animation-item">META WAVE NFT is your pass to Meta Record Label
+						<div class="nft-collection__block-text block-text">
+							<h3 class="block-text__title" data-aos="zoom-out-left">META WAVE NFT is your pass to Meta Record
+								Label
 								ecosystem. It is your
 								access to our industry experts, established artists, and partners.</h3>
-							<div class="block-text__text animation-item">
+							<div class="block-text__text" data-aos="zoom-out-left" data-aos-delay="400">
 								<p>Hac habitasse platea dictumst vestibulum rhoncus est. Sit amet dictum sit amet justo. Tortor
 									aliquam nulla facilisi cras.</p>
 								<p>Maecenas ultricies mi eget mauris pharetra. Sit amet consectetur adipiscing elit ut aliquam
@@ -45,8 +60,8 @@
 						<div class="nft-collection__button"><a href="" class="button button_transp">Get one on OpenSea</a>
 						</div>
 					</div>
-					<div class="nft-collection__image animation-item"><img src="@img/nft-collection/collection-bg.png"
-							alt="Our nft collection"></div>
+					<div class="nft-collection__image" data-aos="zoom-out" data-aos-delay="300"><img
+							src="@img/nft-collection/collection-bg.png" alt="Our nft collection"></div>
 				</div>
 			</section>
 			<section class="artists">
@@ -57,8 +72,8 @@
 				</div>
 				<div class="artists__container">
 					<div class="artists__content">
-						<div class="artists__items animation-wrapper">
-							<div class="artists__item animation-item">
+						<div class="artists__items">
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="0">
 								<div class="artists__photo"><img src="@img/artists/photo1.png" alt="Mark Popson"></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
@@ -66,7 +81,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="150">
 								<div class="artists__photo"><img src="@img/artists/photo2.png" alt="Pete Bentz"></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
@@ -74,7 +89,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="300">
 								<div class="artists__photo"><img src="@img/artists/photo3.png" alt="Daniela Youth"></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
@@ -82,7 +97,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="450">
 								<div class="artists__photo"><img src="@img/artists/photo4.png" alt="Roman Gore"></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
@@ -90,7 +105,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="600">
 								<div class="artists__photo"><img src="@img/artists/photo5.png" alt="Tonya"></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
@@ -98,7 +113,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="750">
 								<div class="artists__photo"><img src="@img/artists/photo6.png" alt="Ivor"></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
@@ -106,7 +121,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="artists__item animation-item">
+							<div class="artists__item" data-aos="zoom-out" data-aos-delay="900">
 								<div class="artists__photo"><img src="@img/artists/photo7.png" alt="Somae Petit"></div>
 								<div class="artists__block-text block-text">
 									<div class="block-text__text">
@@ -119,8 +134,8 @@
 				</div>
 			</section>
 			<section class="story">
-				<div class="story__container animation-wrapper">
-					<h2 class="story__title section-title animation-item">MRL. <span>the story.</span></h2>
+				<div class="story__container">
+					<h2 class="story__title section-title" data-aos="fade-up">MRL. <span>the story.</span></h2>
 					<div class="story__content">
 						<div class="story-navbar">
 							<ul class="story-navbar__list">
@@ -200,13 +215,15 @@
 						</div>
 					</div>
 				</div>
+				<div class="story-footer-bg"></div>
 			</section>
 			<section class="roadmap">
 				<div class="roadmap__container ">
-					<h2 class="roadmap__title section-title  animation-wrapper animation-item">Roadmap</h2>
+					<h2 class="roadmap__title section-title ">Roadmap</h2>
 					<div class="roadmap__content">
 						<div class="roadmap__items ">
-							<div class="roadmap-item _completed animation-wrapper animation-item">
+							<div class="roadmap-item _completed" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+								data-aos-delay="100">
 								<div class="roadmap-item__header">
 									<div class="roadmap-item__count"></div>
 									<div class="roadmap-item__subtitle"></div>
@@ -227,7 +244,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="roadmap-item animation-wrapper animation-item">
+							<div class="roadmap-item" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+								data-aos-delay="100">
 								<div class="roadmap-item__header">
 									<div class="roadmap-item__count"></div>
 									<div class="roadmap-item__subtitle"></div>
@@ -250,7 +268,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="roadmap-item animation-wrapper animation-item">
+							<div class="roadmap-item" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+								data-aos-delay="100">
 								<div class="roadmap-item__header">
 									<div class="roadmap-item__count"></div>
 									<div class="roadmap-item__subtitle"></div>
@@ -278,41 +297,43 @@
 				<div class="roadmap-bg"></div>
 			</section>
 			<section class="our-partners">
-				<div class="our-partners__container animation-wrapper">
-					<h3 class="our-partners__title animation-item">Our partners</h3>
+				<div class="our-partners__container">
+					<h3 class="our-partners__title" data-aos="fade-down" data-aos-mirror="true" data-aos-offset="50">Our
+						partners
+					</h3>
 					<div class="our-partners__content">
 						<div class="our-partners__items">
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="0">
 								<a href="" class="our-partners-item__link">
 									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="50">
 								<a href="" class="our-partners-item__link">
 									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="100">
 								<a href="" class="our-partners-item__link">
 									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="150">
 								<a href="" class="our-partners-item__link">
 									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="200">
 								<a href="" class="our-partners-item__link">
 									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
 								</a>
 							</div>
-							<div class="our-partners-item animation-item">
+							<div class="our-partners-item" data-aos="fade-down-left" data-aos-delay="250">
 								<a href="" class="our-partners-item__link">
 									<div class="our-partners-item__icon"><img src="@img/our-partners/logoholder.svg"
 											alt="Partner Logo"></div>
@@ -324,9 +345,11 @@
 			</section>
 			<section class="faq">
 				<div class="faq__container">
-					<h2 class="faq__title section-title">Frequently <span>asked</span> questions</span></h2>
+					<h2 class="faq__title section-title" data-aos="fade-down" data-aos-delay="200">Frequently
+						<span>asked</span> questions</span>
+					</h2>
 					<div class="faq__content">
-						<div class="faq-question">
+						<div class="faq-question" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic">
 							<div class="faq-question__block-text block-text">
 								<h3 class="block-text__title">How can I get into Meta RL?</h3>
 								<div class="block-text__text">
@@ -337,7 +360,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="faq-question">
+						<div class="faq-question" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic">
 							<div class="faq-question__block-text block-text">
 								<h3 class="block-text__title">When is the NFT launch?</h3>
 								<div class="block-text__text">
@@ -348,7 +371,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="faq-question">
+						<div class="faq-question" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic">
 							<div class="faq-question__block-text block-text">
 								<h3 class="block-text__title">Can I hold META WAVE NFT as an investment?</h3>
 								<div class="block-text__text">
@@ -359,7 +382,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="faq-question">
+						<div class="faq-question" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic">
 							<div class="faq-question__block-text block-text">
 								<h3 class="block-text__title">Where can I get a WAVE NFT?</h3>
 								<div class="block-text__text">
@@ -371,7 +394,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="faq__image"><img src="@img/faq/faq-img.png" alt="Faq image"></div>
+					<div class="faq__image" data-aos="fade-right"><img src="@img/faq/faq-img.png" alt="Faq image"></div>
 				</div>
 			</section>
 			<section class="team">
@@ -380,10 +403,10 @@
 						<h2 class="team__title main-title">Team</h2>
 					</div>
 				</div>
-				<div class="team__container animation-wrapper">
+				<div class="team__container">
 					<div class="team__content">
 						<div class="team__members">
-							<div class="team-member animation-item">
+							<div class="team-member" data-aos="zoom-out-up" data-aos-delay="100">
 								<div class="team-member__photo"><img src="@img/team/profile1.png" alt="Shaky Lake"></div>
 								<div class="team-member__data">
 									<h3 class="team-member__name">Shaky Lake</h3>
@@ -399,7 +422,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="team-member animation-item">
+							<div class="team-member" data-aos="zoom-out-up" data-aos-delay="200">
 								<div class="team-member__photo"><img src="@img/team/profile2.png" alt="Baky Hike"></div>
 								<div class="team-member__data">
 									<h3 class="team-member__name">Baky Hike</h3>
@@ -415,7 +438,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="team-member animation-item">
+							<div class="team-member" data-aos="zoom-out-up" data-aos-delay="300">
 								<div class="team-member__photo"><img src="@img/team/profile3.png" alt="Vania Do"></div>
 								<div class="team-member__data">
 									<h3 class="team-member__name">Vania Do</h3>
@@ -436,30 +459,35 @@
 				</div>
 			</section>
 			<section class="join-discord">
-				<div class="join-discord__container animation-wrapper">
+				<div class="join-discord__container">
 					<div class="join-discord__content">
-						<h2 class="join-discord__title main-title animation-item">Join our <span>Discord</span></h2>
-						<div class="join-discord__block-text block-text animation-item">
+						<h2 class="join-discord__title main-title" data-aos="fade-down">Join our <span>Discord</span></h2>
+						<div class="join-discord__block-text block-text" data-aos="fade-down">
 							<div class="block-text__text">
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
 									elementum tristique.</p>
 							</div>
 						</div>
-						<div class="join-discord__button animation-item"><a href="" class="button">Join Discord</a>
+						<div class="join-discord__button" data-aos="zoom-in" data-aos-duration="400">
+							<a href="" class="button">
+								<span><img src="@img/socials/discord.png" alt="Ds Icon"></span>
+								<span>Join Discord</span>
+							</a>
 						</div>
 					</div>
-					<div class="join-discord__image animation-item"><img src="@img//join-discord/dc-bg.png" alt="Wave"></div>
+					<div class="join-discord__image" data-aos="fade-left"><img src="@img//join-discord/dc-bg.png" alt="Wave">
+					</div>
 				</div>
 			</section>
 		</main>
-		@@include('html/footer.html',{})
+		@@include('parts/footer.html',{})
 	</div>
 
 	<!--Подключаем Jquery-->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<!--Подключаем JS-->
-	<script src="js/main.min.js"></script>
+	<script src="assets/js/main.min.js"></script>
 </body>
 
 </html>

@@ -2,17 +2,17 @@
 import * as nodePath from 'path';
 const rootFolder = nodePath.basename(nodePath.resolve());
 
-const buildFolder = `./dist`; // Также можно использовать rootFolder
+const buildFolder = `./build`; // Также можно использовать rootFolder
 const srcFolder = `./src`;
 
 export const path = {
 	build: {
-		js: `${buildFolder}/js/`,
-		css: `${buildFolder}/css/`,
+		js: `${buildFolder}/assets/js/`,
+		css: `${buildFolder}/assets/css/`,
 		html: `${buildFolder}/`,
-		images: `${buildFolder}/img/`,
-		fonts: `${buildFolder}/fonts/`,
-		files: `${buildFolder}/other/`
+		images: `${buildFolder}/assets/img/`,
+		fonts: `${buildFolder}/assets/fonts/`,
+		files: `${buildFolder}/assets/files/`
 	},
 	src: {
 		js: `${srcFolder}/js/main.js`,
@@ -20,7 +20,7 @@ export const path = {
 		svg: `${srcFolder}/img/**/*.svg`,
 		scss: `${srcFolder}/scss/style.scss`,
 		html: `${srcFolder}/*.html`, //.pug
-		files: `${srcFolder}/other/**/*.*`,
+		files: `${srcFolder}/files/**/*.*`,
 		svgicons: `${srcFolder}/icons/*.svg`,
 	},
 	watch: {
@@ -28,7 +28,7 @@ export const path = {
 		scss: `${srcFolder}/scss/**/*.scss`,
 		html: `${srcFolder}/**/*.html`, //.pug
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
-		files: `${srcFolder}/other/**/*.*`
+		files: `${srcFolder}/files/**/*.*`
 	},
 	clean: buildFolder,
 	buildFolder: buildFolder,
