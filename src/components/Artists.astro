@@ -1,0 +1,95 @@
+---
+import { Image } from 'astro:assets';
+import { fullName } from '../utils/filters';
+
+const artists = [
+	{ firstname: 'Mark', lastname: 'Popson', photoURL: '../assets/artists/mark-popson.png' },
+	{ firstname: 'Pete', lastname: 'Bentz', photoURL: '../assets/artists/pete-bentz.png' },
+	{ firstname: 'Daniela', lastname: 'Youth', photoURL: '../assets/artists/daniela-youth.png' },
+	{ firstname: 'Roman', lastname: 'Gore', photoURL: '../assets/artists/roman-gore.png' },
+	{ firstname: 'Tonya', photoURL: '../assets/artists/tonya.png' },
+	{ firstname: 'Ivor', photoURL: '../assets/artists/ivor.png' },
+	{ firstname: 'Somae', lastname: 'Petit', photoURL: '../assets/artists/somae-petit.png' },
+];
+---
+
+<section class="artists">
+	<div class="artists__marquee marquee">
+		<div class="marquee-content">
+			<h2 class="artists__title main-title">Artists</h2>
+		</div>
+	</div>
+	<div class="artists__container">
+		<div class="artists__content">
+			<div class="artists__items">
+				{
+					artists.map(artist => (
+						<div class="artists__item" data-aos="zoom-out" data-aos-delay="0">
+							<div class="artists__photo">
+								<Image
+									src={artist.photoURL}
+									alt={fullName(artist.firstname, artist.lastname)}
+								/>
+							</div>
+							<div class="artists__block-text block-text">
+								<div class="block-text__text">
+									<p>{fullName(artist.firstname, artist.lastname)}</p>
+								</div>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	.artists {
+		background-color: $mainbgc;
+		&__marquee {
+			padding: 10px 0px;
+		}
+		&__title {
+			@include adaptiv-value('font-size', 79, 32);
+			line-height: 1.11;
+		}
+		&__container {
+			@include adaptiv-value('padding-top', 126, 65);
+			@include adaptiv-value('padding-bottom', 124, 55);
+		}
+		&__content {
+			@media (max-width: $bp980) {
+				padding: 0px 15px;
+			}
+		}
+		&__items {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+			@include adaptiv-value('grid-column-gap', 60, 40);
+			grid-row-gap: 55px;
+		}
+		&__item {
+		}
+		&__photo {
+			display: flex;
+			justify-content: center;
+			img {
+				display: block;
+				margin: 0 auto;
+				max-width: 100%;
+				@media (max-width: $bp480) {
+					max-width: 60%;
+				}
+			}
+		}
+		&__block-text {
+			margin-top: 1.1em;
+			text-align: center;
+			@include adaptiv-font(16, 14);
+			> div {
+				margin-top: 0;
+			}
+		}
+	}
+</style>

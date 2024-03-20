@@ -1,0 +1,144 @@
+---
+const nfts = [
+	{ name: 'NFT1', preview: './assets/hero/slider/nft-1.png' },
+	{ name: 'NFT2', preview: './assets/hero/slider/nft-2.png' },
+	{ name: 'NFT3', preview: './assets/hero/slider/nft-3.png' },
+	{ name: 'NFT4', preview: './assets/hero/slider/nft-4.png' },
+	{ name: 'NFT5', preview: './assets/hero/slider/nft-5.png' },
+	{ name: 'NFT6', preview: './assets/hero/slider/nft-6.png' },
+];
+---
+
+<section class="hero">
+	<div class="hero-bg"></div>
+	<div class="hero-slider swiper">
+		<div class="swiper-wrapper">
+			{
+				nfts.map(nft => (
+					<div class="swiper-slide">
+						<img src={nft.preview} alt={nft.name} />
+					</div>
+				))
+			}
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<div class="hero__container">
+		<div class="hero__content">
+			<h1 class="hero__title main-title animation-item" data-aos="fade-up">Meta record label</h1>
+			<div
+				class="hero__block-text block-text"
+				data-aos="fade-up"
+				data-aos-offset="200"
+				data-aos-delay="400">
+				<div class="block-text__text">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim
+						in eros elementum tristique.
+					</p>
+				</div>
+			</div>
+			<div class="hero__button"><a href="" class="button">Learn more</a></div>
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	.hero {
+		position: relative;
+		background-color: $mainbgc;
+		&-bg {
+			display: none;
+			@extend %abs100;
+			background: url('../assets/hero/cover.png') right top/contain no-repeat;
+			@media (max-width: $bp980) {
+				display: block;
+				opacity: 0.5;
+			}
+		}
+		.hero-slider {
+			pointer-events: all;
+			padding: 2em 0;
+			position: absolute;
+			top: 0;
+			right: 1%;
+			height: 100%;
+			max-width: 700px;
+			z-index: 100;
+			overflow: hidden;
+			@media (min-width: $fullherocnt) {
+				max-width: 50%;
+			}
+			@media (max-width: $bp1280) {
+				max-width: 600px;
+			}
+			@media (max-width: $bp980) {
+				display: none;
+			}
+		}
+		&__container {
+			position: relative;
+			z-index: 10;
+			@include adaptiv-value('padding-top', 133, 65);
+			@include adaptiv-value('padding-bottom', 103, 40);
+			max-width: $fullherocnt;
+			@media (max-width: $fullherocnt) {
+				max-width: $bp1280;
+			}
+			@media (max-width: $bp1280) {
+				max-width: $bp1024;
+			}
+			@media (max-width: $bp1024) {
+				max-width: $bp980;
+			}
+			@media (max-width: $bp980) {
+				max-width: $bp760;
+			}
+			@media (max-width: $bp760) {
+				max-width: none;
+			}
+		}
+		&__content {
+			padding-left: 2em;
+			max-width: calc(484px + 2em);
+			@media (max-width: $bp480) {
+				padding-left: 1em;
+			}
+		}
+		&__block-text {
+			margin-top: 43px;
+			> div {
+				@include adaptiv-value('margin-right', 155, 30);
+			}
+		}
+		&__button {
+			@include adaptiv-value('margin-top', 155, 50);
+		}
+		&__title {
+		}
+	}
+
+	.swiper {
+		&-wrapper {
+		}
+		&-slide {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0.5;
+			transform: opacity 0.3s ease-in 0s;
+			&-active {
+				opacity: 1;
+			}
+			img {
+				display: block;
+				max-width: 100%;
+				height: auto;
+				object-fit: contain;
+			}
+		}
+		&-pagination-bullet {
+			background-color: $txtcolor;
+		}
+	}
+</style>

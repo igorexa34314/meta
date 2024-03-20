@@ -1,0 +1,44 @@
+@import './vars';
+
+// Mixins
+// =======================================================
+
+// 1 - если меньше контейнера
+// 2 - если больше контейнера
+// 3 - для любого случая
+$type: 2;
+
+// Adaptive value
+@mixin adaptiv-value($property, $startSize, $minSize) {
+	$addSize: $startSize - $minSize;
+
+	@if $type==1 {
+		// Только если меньше контейнера
+		#{$property}: $startSize + px;
+		@media (min-width: #{$fullContainerWidth + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$fullContainerWidth - 320})
+			);
+		}
+	}
+
+	@if $type==2 {
+		// Только если больше контейнера
+		#{$property}: $startSize + px;
+		@media (max-width: #{$fullContainerWidth + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+			);
+		}
+	} @else {
+		// Всегда
+		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+	}
+}
+
+// Adaptive font size
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidthContainer - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer}));
+}

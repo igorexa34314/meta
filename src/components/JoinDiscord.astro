@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets';
+import coverImg from '../assets/join-discord/cover.png';
+import discordIcon from '../assets/icons/socials/discord.png';
+---
+
+<section class="join-discord">
+	<div class="join-discord__container">
+		<div class="join-discord__content">
+			<h2 class="join-discord__title main-title" data-aos="fade-down">
+				Join our <span>Discord</span>
+			</h2>
+			<div class="join-discord__block-text block-text" data-aos="fade-down">
+				<div class="block-text__text">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim
+						in eros elementum tristique.
+					</p>
+				</div>
+			</div>
+			<div class="join-discord__button" data-aos="zoom-in" data-aos-duration="400">
+				<a href="" class="button">
+					<span><Image src={discordIcon} alt="Dicord" /></span>
+					<span>Join Discord</span>
+				</a>
+			</div>
+		</div>
+		<div class="join-discord__image" data-aos="fade-left">
+			<Image src={coverImg} alt="Join discord cover" />
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	.join-discord {
+		background-color: $mainbgc;
+		&__container {
+			@include adaptiv-value('padding-top', 120, 55);
+			@include adaptiv-value('padding-bottom', 120, 65);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			column-gap: 40px;
+			@media (max-width: $bp760) {
+				flex-direction: column;
+				row-gap: 5em;
+			}
+		}
+
+		&__content {
+			max-width: 500px;
+			@media (max-width: $bp1024) {
+				padding: 0 15px;
+			}
+		}
+
+		&__title {
+		}
+
+		&__block-text {
+			margin-bottom: 2.3em;
+			> div {
+				margin-top: 3em;
+			}
+		}
+
+		&__button {
+			.button {
+				padding: 1em 2.8em;
+				max-width: fit-content;
+				display: flex;
+				align-items: center;
+				span {
+					display: inline-block;
+					&:not(:last-child) {
+						margin-right: 1ch;
+					}
+				}
+			}
+		}
+
+		&__image {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img {
+				margin: 0 auto;
+				display: block;
+				max-width: 100%;
+				@media (max-width: $bp1024) {
+					max-width: 85%;
+				}
+			}
+		}
+	}
+</style>

@@ -1,0 +1,277 @@
+<section class="roadmap">
+	<div class="roadmap__container">
+		<h2 class="roadmap__title section-title">Roadmap</h2>
+		<div class="roadmap__content">
+			<div class="roadmap__items">
+				<div
+					class="roadmap-item _completed"
+					data-aos="fade-up"
+					data-aos-anchor-placement="center-bottom"
+					data-aos-delay="100">
+					<div class="roadmap-item__header">
+						<div class="roadmap-item__count"></div>
+						<div class="roadmap-item__subtitle"></div>
+						<h3 class="roadmap-item__title">Spring 2022 - pre launch</h3>
+					</div>
+					<div class="roadmap-item__main">
+						<div class="roadmap-item__block-text block-text">
+							<div class="block-text__text">
+								<ul>
+									<li>Website 1.2</li>
+									<li>Discord community promotion</li>
+									<li>MINTING WAVE NFTs</li>
+								</ul>
+								<p>
+									WAVE NFTs will be 100% pre-minted and launched as an OpenOcean collection
+								</p>
+							</div>
+						</div>
+						<div class="roadmap-item__image">
+							<img src="@img/roadmap/pre-launch.png" alt="Pre launch" />
+						</div>
+					</div>
+				</div>
+				<div
+					class="roadmap-item"
+					data-aos="fade-up"
+					data-aos-anchor-placement="center-bottom"
+					data-aos-delay="100">
+					<div class="roadmap-item__header">
+						<div class="roadmap-item__count"></div>
+						<div class="roadmap-item__subtitle"></div>
+						<h3 class="roadmap-item__title">Summer 2022 - GROWTH</h3>
+					</div>
+					<div class="roadmap-item__main">
+						<div class="roadmap-item__block-text block-text">
+							<div class="block-text__text">
+								<ul>
+									<li>Hiring for 10 positions in</li>
+									<li>Partnerships with main Metaverse players</li>
+									<li>Partnerships with WEB 2.0 music destribution channels</li>
+								</ul>
+								<p>Onboarding 100 new artists</p>
+								<p>
+									META Record Labels is holding the first screening of aspiring artists
+									from the list of WAVE NFT holders
+								</p>
+							</div>
+						</div>
+						<div class="roadmap-item__image">
+							<img src="@img/roadmap/growth.png" alt="Growth" />
+						</div>
+					</div>
+				</div>
+				<div
+					class="roadmap-item"
+					data-aos="fade-up"
+					data-aos-anchor-placement="center-bottom"
+					data-aos-delay="100">
+					<div class="roadmap-item__header">
+						<div class="roadmap-item__count"></div>
+						<div class="roadmap-item__subtitle"></div>
+						<h3 class="roadmap-item__title">Summer 2022 - YOuR new stage</h3>
+					</div>
+					<div class="roadmap-item__main">
+						<div class="roadmap-item__block-text block-text">
+							<div class="block-text__text">
+								<ul>
+									<li>Onboarding new partners</li>
+									<li>First live concert in Sandjar</li>
+									<li>Live concert in Decentrafield</li>
+								</ul>
+								<p>
+									We secured dates for out artists to peform in front of the live audience
+									of Metaverse. Check the concert schedule in our <a href="">Discord</a>
+								</p>
+							</div>
+						</div>
+						<div class="roadmap-item__image">
+							<img src="@img/roadmap/new-stage.png" alt="New stage" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="roadmap-bg"></div>
+</section>
+
+<style lang="scss">
+.roadmap {
+	position: relative;
+	background-color: $mainbgc;
+	&-bg, &::before, &::after {
+		$bgsize: calc(679px / 1440px * 100%);
+		position: absolute;
+		display: block;
+		background: transparent url(@img/roadmap/circles-bg.svg) no-repeat;
+		width: $bgsize;
+		padding-bottom: $bgsize;
+		@media(max-width:$bp1440) {
+			background-size: contain;
+		}
+		@media(max-width:$bp640) {
+			display: none;
+		}
+	}
+	&::before, &::after {
+		content: "";
+		left: 1.5%;
+		@media(max-width:$bp980) {
+			left: -5%;
+		}
+	}
+	&-bg {
+		top: 20%;
+		right: 1.5%;
+		@media(max-width:$bp980) {
+			right: -5%;
+		}
+		// transform: translate(0, -50%);
+		background-position: center right;
+	}
+	&::before {
+		top: -7%;
+		background-position: top center;
+		@media(max-width:$bp980) {
+			top: 2%;
+		}
+	}
+	&::after {
+		bottom: 0;
+		background-position: bottom center;
+	}
+	&__container {
+		@include adaptiv-value("padding-top", 120, 65);
+		@include adaptiv-value("padding-bottom", 265, 75);
+	}
+	&__title {
+		margin-bottom: 1.6em;
+	}
+	&__content {
+		margin: 0 auto;
+		max-width: 560px;
+		@media(min-width: $bp1920) {
+			max-width: 60%;
+		}
+		@media(max-width: $bp760) {
+			max-width: 85%;
+		}
+		@media(max-width: $bp480) {
+			max-width: 90%;
+		}
+		padding: 10px;
+	}
+	&__items {}
+
+	&-item {
+		position: relative;
+		z-index: 50;
+		&:not(:last-child) {
+			@include adaptiv-value("margin-bottom", 140, 65);
+			&:after {
+				content: "";
+				position: absolute;
+				left: 50%;
+				@include adaptiv-value("bottom", -55, -30);
+				transform: translate(-50%, 50%);
+				display: inline-block;
+				width: 0.1em;
+				background-color: $greenbgc;
+				height: 2.2em;
+			}
+		}
+		background-color: $contentbgc;
+		border: 2px solid $greenbgc;
+		&__header {
+			padding: 0.8125em;
+			text-transform: uppercase;
+			display: grid;
+			grid-template-columns: auto 1fr;
+			grid-gap: 0px 11.75px;
+			border-bottom: 2px solid $greenbgc;
+			& > * {
+				align-self: center;
+			}
+		}
+
+		&__count {
+			width: 45px;
+			height: 45px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.75em;
+			line-height: 1.02;
+			grid-row: 1/3;
+			color: $greenbgc;
+			border: 1px solid $greenbgc;
+			.roadmap-item._completed & {
+				color: $mainbgc;
+				background-color: $greenbgc;
+			}
+		}
+		&__subtitle {
+			margin-bottom: 1px;
+			font-size: 0.5em;
+			line-height: 1.5;
+			letter-spacing: 0.125em;
+			color: $greenbgc;
+			&::before {
+				content: "Phase ";
+			}
+			.roadmap-item._completed &::after {
+				content: " - completed";
+			}
+		}
+		&__title {
+			line-height: 1.73;
+			grid-column: 2/3;
+		}
+		&__main {
+			padding: 1.85em 0.75em;
+			display: flex;
+			align-items: flex-start;
+		}
+		&__block-text {
+			flex: 1 1 auto;
+			padding-right: 3.5em;
+
+			> div {
+				margin-top: 0;
+				font-size: 0.6875em;
+				line-height: 2.33;
+			}
+			p:not(:last-child) {
+				margin-bottom: 0.88em;
+			}
+			ul {
+				margin-left: 1.4em;
+				margin-bottom: 2em;
+				> li {
+					line-height: 2.91;
+				}
+			}
+			span, a {
+				margin: 0 0.5ch;
+				font-family: $DMMono;
+				font-size: 1.1em;
+				line-height: 2.13;
+				color: $greenbgc;
+			}
+		}
+		&__image {
+			flex: 0 0 129px;
+			display: flex;
+			@media(max-width:$bp480) {
+				display: none;
+			}
+			img {
+				display: block;
+				margin: 0 auto;
+				max-width: 100%;
+			}
+		}
+	}
+}
+</style>

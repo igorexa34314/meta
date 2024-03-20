@@ -1,0 +1,46 @@
+// Viewport and container width
+$maxWidth: 1440;
+$herocnt: 1360;
+$maxWidthContainer: 1160;
+
+// Container padding
+$cntpd: 15;
+
+$fullContainerWidth: $maxWidthContainer + $cntpd + $cntpd;
+
+$fullherocnt: ($herocnt + $cntpd + $cntpd) + px;
+
+// Base variables
+$mainbgc: #000000;
+$contentbgc: #222222;
+$greenbgc: #8dfd1b;
+$txtcolor: #ffffff;
+$graytxt: #c4c4c4;
+$footerbgc: #42006a;
+
+// Breakpoints
+$bp2560: 2560px;
+$bp1920: 1920px;
+$bp1600: 1600px;
+$bp1440: 1440px;
+$bp1366: 1366px;
+$bp1280: 1280px;
+$bp1024: 1024px;
+$bp980: 980px;
+$bp760: 760px;
+$bp640: 640px;
+$bp480: 480px;
+$bp320: 320px;
+
+// Base classes
+%abs100 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.hidden {
+	display: none;
+}

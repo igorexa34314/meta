@@ -1,0 +1,203 @@
+<section class="story">
+	<div class="story__container">
+		<h2 class="story__title section-title" data-aos="fade-up">MRL. <span>the story.</span></h2>
+		<div class="story__content">
+			<div class="story-navbar">
+				<ul class="story-navbar__list">
+					<div class="story-navbar__item">
+						<a class="story-navbar__link _active">Our founders</a>
+					</div>
+					<div class="story-navbar__item"><a class="story-navbar__link">Partners</a></div>
+					<div class="story-navbar__item"><a class="story-navbar__link">The future</a></div>
+				</ul>
+			</div>
+			<div class="story__items">
+				<div class="story-item _active" id="story1">
+					<div class="story-item__wrapper">
+						<div class="story-item__image">
+							<img src="@img/story/story1.png" alt="Story1" />
+						</div>
+						<div class="story-item__block-text block-text">
+							<h3 class="block-text__title">
+								META WAVE NFT is your pass to Meta Record Label ecosystem. It is your access
+								to our industry experts, established artists, and partners.
+							</h3>
+							<div class="block-text__text">
+								<p>
+									Hac habitasse platea dictumst vestibulum rhoncus est. Sit amet dictum sit
+									amet justo. Tortor aliquam nulla facilisi cras.
+								</p>
+								<p>
+									Maecenas ultricies mi eget mauris pharetra. Sit amet consectetur
+									adipiscing elit ut aliquam purus. Porta nibh venenatis cras sed felis.
+									Aenean vel elit scelerisque mauris pellentesque pulvinar. Et malesuada
+									fames ac turpis egestas sed tempus. Enim sit amet venenatis urna cursus
+									eget.
+								</p>
+								<p>
+									Maecenas ultricies mi eget mauris pharetra et ultrices. A condimentum
+									vitae sapien pellentesque habitant morbi.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="story-item" id="story2">
+					<div class="story-item__wrapper">
+						<div class="story-item__image">
+							<img src="@img/story/story1.png" alt="Story1" />
+						</div>
+						<div class="story-item__block-text block-text">
+							<h3 class="block-text__title">
+								META WAVE NFT is your pass to Meta Record Label ecosystem. It is your access
+								to our industry experts, established artists, and partners.
+							</h3>
+							<div class="block-text__text">
+								<p>
+									Hac habitasse platea dictumst vestibulum rhoncus est. Sit amet dictum sit
+									amet justo. Tortor aliquam nulla facilisi cras.
+								</p>
+								<p>
+									Maecenas ultricies mi eget mauris pharetra. Sit amet consectetur
+									adipiscing elit ut aliquam purus. Porta nibh venenatis cras sed felis.
+									Aenean vel elit scelerisque mauris pellentesque pulvinar. Et malesuada
+									fames ac turpis egestas sed tempus. Enim sit amet venenatis urna cursus
+									eget.
+								</p>
+								<p>
+									Maecenas ultricies mi eget mauris pharetra et ultrices. A condimentum
+									vitae sapien pellentesque habitant morbi.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="story-item" id="story3">
+					<div class="story-item__wrapper">
+						<div class="story-item__image">
+							<img src="@img/story/story1.png" alt="Story1" />
+						</div>
+						<div class="story-item__block-text block-text">
+							<h3 class="block-text__title">
+								META WAVE NFT is your pass to Meta Record Label ecosystem. It is your access
+								to our industry experts, established artists, and partners.
+							</h3>
+							<div class="block-text__text">
+								<p>
+									Hac habitasse platea dictumst vestibulum rhoncus est. Sit amet dictum sit
+									amet justo. Tortor aliquam nulla facilisi cras.
+								</p>
+								<p>
+									Maecenas ultricies mi eget mauris pharetra. Sit amet consectetur
+									adipiscing elit ut aliquam purus. Porta nibh venenatis cras sed felis.
+									Aenean vel elit scelerisque mauris pellentesque pulvinar. Et malesuada
+									fames ac turpis egestas sed tempus. Enim sit amet venenatis urna cursus
+									eget.
+								</p>
+								<p>
+									Maecenas ultricies mi eget mauris pharetra et ultrices. A condimentum
+									vitae sapien pellentesque habitant morbi.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="story-footer-bg"></div>
+</section>
+
+<style lang="scss">
+.story {
+	background-color: $mainbgc;
+	&-footer-bg {
+		display: block;
+		height: calc(100vw / 6);
+		width: 100%;
+		background: $mainbgc url('@img/story/story-footer-bg.png') center bottom/100% no-repeat;
+		@media(min-width:$bp1440) {
+			max-height: 240px;
+			background-size: cover;
+		}
+	}
+	&__container {
+		@include adaptiv-value("padding-top", 110, 55);
+		@include adaptiv-value("padding-bottom", 120, 50);
+	}
+	&__title {
+		margin-bottom: 1.6em;
+		transition-delay: 0.2s;
+	}
+	&__content {
+		height: fit-content;
+		display: grid;
+		grid-template-columns: minmax(100px, 24.2%) 1fr;
+		@media(max-width:$bp980) {
+			grid-template-columns: 1fr;
+			grid-gap: 2.2em 0px;
+		}
+	}
+	&__items {
+		position: relative;
+	}
+}
+.story-navbar {
+	&__list {}
+	&__item {}
+	&__link {
+		cursor: pointer;
+		margin: 0 auto;
+		@media(max-width:$bp980) {
+			max-width: 85%;
+		}
+		display: block;
+		padding: 1.56em 1em 1.9em 1.75em;
+		@include adaptiv-font(16, 14);
+		transition: all 0.4s ease 0s;
+		&:hover {
+			background-color: $contentbgc;
+		}
+		&:active, &._active {
+			color: $greenbgc;
+			background-color: $contentbgc;
+		}
+	}
+}
+.story-item {
+	&:not(:first-child) {
+		@extend %abs100;
+	}
+	z-index: -100;
+	opacity: 0;
+	transition: all 0.2s ease 0s;
+	background-color: $contentbgc;
+	&._active {
+		z-index: 0;
+		opacity: 1;
+	}
+	&__wrapper {
+		@include adaptiv-value("padding", 60, 0);
+		display: flex;
+		@media(max-width:$bp640) {
+			padding: 15px;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	&__image {
+		flex: 0 0 28%;
+		@include adaptiv-value("margin-right", 40, 0);
+		@media(max-width:$bp640) {
+			margin-bottom: 2.5em;
+			display: flex;
+			justify-content: center;
+		}
+		text-align: right;
+		img {
+			max-width: 100%;
+		}
+	}
+	&__block-text {}
+}
+</style>
